@@ -94,8 +94,7 @@ To see other AD representations look at [template/](template).
 The ADF has *four* modules:
 
 1. **Catalogue** contains a curated collection of YAML files. Each file
-   includes a collection of ADs for a threat domain.
-   The catalogue is in [yaml/](yaml).
+   includes a collection of ADs for a threat domain (see [catalog/](catalog)).
 2. **Analyze**: describe analyze API (`analyze.py`) and tests (`analyze_test.py`).
 3. **Check**: describe analyze API (`check.py`) and tests (`check_test.py`).
 4. **Parse**: describe analyze API (`parse.py`) and tests (`parse_test.py`).
