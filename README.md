@@ -2,15 +2,13 @@
 
 ## Repo structure
 
-* `catalog` contains the AD files
-* `analyze.py` automatically analyze ADs (maps, chains, trees, ...)
-* `check.py` check syntax and semantic of the ADs
-* `parse.py` parse ADs from other sources (CAPEC, ...)
-* `*_test.py` test scripts
-* `evals.md` ADs case studies
-* `notes.md` ADs notes
-* `meetings.md` ADs meeting minutes
-* `Makefile` automate tasks
+* `toolkit/` contains the file to test our framework
+    * `yaml` contains the AD files
+    * `analyze.py` automatically analyze ADs (maps, chains, trees, ...)
+    * `check.py` check syntax and semantic of the ADs
+    * `parse.py` parse ADs from other sources (CAPEC, ...)
+    * `*_test.py` test scripts
+    * `Makefile` automate tasks
 
 ## Initialize development environment
 
