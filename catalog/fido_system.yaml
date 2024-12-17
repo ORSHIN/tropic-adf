@@ -1,0 +1,195 @@
+# FIDO AD
+
+# generic threats
+
+auth_cl_MiTM:
+  a: MiTM between Client and Authenticator
+  d:
+    Protect USB/BLE Transport Protocol: []
+  year:
+  surf: [Client, Authenticator]
+  vect: [Transport Protocol Corruption]
+  model: [Proximity, MiTM]
+  tag: []
+  risk: []
+  cve: []
+  cwe: ["300"]
+  capec: ["94"]
+
+cl_rp_MiTM:
+  a: MiTM between RP and Client
+  d:
+    Display RP Data to User:
+      [
+        Transaction Confirmation
+      ]
+    Secure RP/Client Channel:
+      [
+        Channel Binding
+      ]
+  year:
+  surf: [Client, RP]
+  vect: [Malware, TLS Proxy Corruption]
+  model: [Remote, MiTM]
+  tag: []
+  risk: []
+  cve: []
+  cwe: ["300"]
+  capec: ["94", "662"]
+
+rpapp_cs:
+  a: Relying Party App Corruption or Spoofing
+  d:
+    Display RP Data to User:
+      [
+        Transaction Confirmation
+      ]
+    Check App Authorization to Target RP:
+      [
+        App ID/RP ID Separation
+      ]
+    Protect Client Access to Authenticator:
+      [
+        Authenticator Activation PIN
+      ]
+  year:
+  surf: [Client, RP, RP App]
+  vect: [App Phishing, XSS Attack]
+  model: [Remote, Phishing]
+  tag: []
+  risk: []
+  cve: []
+  cwe: ["114", "290"]
+  capec: ["98", "549"]
+
+cl_cs:
+  a: Client Corruption or Spoofing
+  d:
+    Display RP Data to User:
+      [
+        Transaction Confirmation
+      ]
+    Protect Client Access to Authenticator:
+      [
+        Authenticator Activation PIN
+      ]
+      Remove Malware from Device: []
+  year:
+  surf: [Client]
+  vect: [Malware, Compromised Browser Extension, XSS Attack]
+  model: [Remote, Phishing]
+  tag: []
+  risk: []
+  cve: []
+  cwe: ["114", "290"]
+  capec: ["98", "549"]
+
+auth_m:
+  a: Manufacturers Installs Backdoors on Authenticator, or Manipulations Occours during Supply and Distribution Chain
+  d:
+    RP Only Allows Registration of Reliable Authenticators:
+      [
+        Auth Status Checking
+      ]
+  year:
+  surf: [Authenticator, Supply Chain, Manufactorer]
+  vect: [Supply Chain Attack]
+  model: [Physical]
+  tag: []
+  risk: []
+  cve: []
+  cwe: ["1195"]
+  capec: ["438", "439"]
+
+auth_f:
+  a: Fake Authenticator
+  d:
+    RP Only Allows Registration of Reliable Authenticators:
+      [
+        Auth Class Attestation,
+        Auth Certification
+      ]
+  year:
+  surf: [Authenticator]
+  vect: [Spoofing]
+  model: [Physical]
+  tag: []
+  risk: []
+  cve: []
+  cwe: []
+  capec: ["98"]
+
+auth_sca:
+  a: Side-Channel Attack on Authenticator to Extract Keys and Clone It
+  d:
+    Proper Protection of the Authenticator Token: []
+    Robust Device: []
+    Protect Cryptographic Implementation against SCA and use secure Libraries: []
+    Debug Interface Protection: []
+    Secure Microcontroller: []
+    Isolated Key Storage in Microcontrollers: []
+    Firmware Integrity Check and Attestation: []
+  year:
+  surf: [Authenticator]
+  vect: [
+    Firmware Rollback,
+    User Verification Data Injection,
+    Verification Data Modification,
+    Entropy Source Compromise,
+    PRNG Compromise,
+    Electromagnetic Attack,
+    Degub Interface,
+    Fault Injection Attack,
+    Timing Attack
+  ]
+  model: [SCA, Evil Maid]
+  tag: []
+  risk: []
+  cve: []
+  cwe: ["1300"]
+  capec: ["622", "624"]
+
+rp_crypt:
+  a: Malicious RP Crypto Attack on Key Handles
+  d:
+    Implement Secure Key Handles Operations: []
+  year:
+  surf: [RP, Key Handle]
+  vect: [Crypto Attack]
+  model: [Remote]
+  tag: []
+  risk: []
+  cve: []
+  cwe: ["506"]
+  capec: ["97"]
+
+#databases
+
+RPdb_m:
+  a: RP Database Modification
+  d:
+    Integrity Check: []
+  year:
+  surf: [RP, RP Database]
+  vect: [Database Data Injection, Database Modification]
+  model: [Remote]
+  tag: []
+  risk: []
+  cve: []
+  cwe: ["20", "284"]
+  capec: ["165"]
+
+meta_m:
+  a: Authenticator Metadata Data Injection
+  d:
+    Integrity Check: []
+    Review Difference between Old and New Metadata Statements: []
+  year:
+  surf: [RP, Auth Metadata]
+  vect: [Database Data Injection]
+  model: [Remote]
+  tag: []
+  risk: []
+  cve: []
+  cwe: ["20", "284"]
+  capec: ["165"]

@@ -1,0 +1,367 @@
+attack_0:
+  a: ROM optical dump (Retrieving ROM content from pictures)
+  d:
+    Making pictures of the ROM bits should not be sufficient to retrieve data:
+      - Data scrambling.
+      - Scrambling wordlines
+      - Adding BL scrambling and make it output independent
+  model:
+    - invasive
+  surf:
+    - Boot ROM dump
+    - Boot ROM RE and exploitation
+    - Side Channel for non-, semi- and fully invasive techniques
+  vect:
+    - Reverse-Engineering
+
+attack_1:
+  a:
+    ROM analytical dump with scrambled data (Retrieving ROM content from pictures)
+  d:
+    Taking picture of the ROM bits and reverse-engineering its circuitry (control row decoder / column decoder) should not make it possible to retrieve data:
+      - Use Encryption
+  model:
+    - invasive
+  surf:
+    - Boot ROM dump
+    - Boot ROM RE and exploitation
+    - Side Channel for non-, semi- and fully invasive techniques
+  vect:
+    - Reverse-Engineering
+
+attack_2:
+  a:
+    ROM analytical dump,Retrieving ROM content from pictures only, considering the
+    ROM data are scrambled.
+  d:
+    Taking picture of the ROM bits and reverse-engineering its circuitry (control / row decoder / column decoder) should not make it possible to retrieve data:
+      - Encryption circuitry should be placed outside of the memory itself.
+  model:
+    - invasive
+  surf:
+    - Boot ROM dump
+    - Boot ROM RE and exploitation
+    - Side Channel for non-, semi- and fully invasive techniques
+  vect:
+    - Reverse-Engineering
+
+# Typically suppress branches from the normal execution so as to probe data from a memory
+# in a linear manner.,LCE defines a family of attacks as there are multiple ways of triggering the linear behavior
+attack_3:
+  a:
+    LCE Instruction flow modification (through micro-probing)
+  d:
+    Non-volatile memories should not be extractable through micro-probing attacks:
+      - Dedicated countermeasures such as the one created by Texplained and the CEA/ENSM  (paper
+        has been published at HOST_23).
+      - Countermeasures are activity monitors that detect the LCE-modified instruction
+        flow.
+  model:
+    - invasive
+  surf:
+    - Boot ROM and other NVM dump
+    - Boot ROM and other NVM RE and exploitation
+    - Side Channel for non-, semi- and fully invasive techniques
+  vect:
+    - Reverse-Engineering
+    - micro-probing
+    - Instruction Flow modification
+
+attack_4:
+  a: FIB modification
+  d:
+    Modifying or accessing internal signals should be rendered difficult.:
+      - Packing the signals of interest.
+  model:
+    - invasive
+  surf:
+    - instruction skip
+    - instruction modification
+    - execution flow modification
+    - counter-measure deactivation
+    - read internal signals
+  vect:
+    - FIB editing
+
+attack_5:
+  a: FIB modification
+  d:
+    Modifying or accessing internal signals should be rendered difficult.:
+      - Sensitive signals should stay far from the top metal layer to force an harder
+        backside attack.
+  model:
+    - invasive
+  surf:
+    - instruction skip
+    - instruction modification
+    - execution flow modification
+    - counter-measure deactivation
+    - read internal signals
+  vect:
+    - FIB editing
+
+attack_6:
+  a: Shield Bypass
+  d:
+    Micro-probing should be difficult to perform.:
+      - Shields do not prevent micro-probing.
+      - More complex shields involving extra logic scattered across the die surface
+  model:
+    - invasive
+  surf:
+    - counter-measure deactivation
+  vect:
+    - FIB editing
+
+attack_7:
+  a: Shield Bypass
+  d:
+    Micro-probing should be difficult to perform.:
+      - Avoid single security violation signals
+  model:
+    - invasive
+  surf:
+    - counter-measure deactivation
+  vect:
+    - FIB editing
+
+attack_8:
+  a:
+    Prevent Flash Erase,Can be used by an attacker to mitigate security-violation
+    triggered data erasure.
+  d:
+    Flash operation should not be modifiable:
+      - Read back values after Flash erase to make sure data are gone.
+  model:
+    - invasive
+  surf:
+    - Flash controls
+    - Charge pump operation
+  vect:
+    - FIB editing
+
+attack_9:
+  a:
+    Prevent Flash Erase,Can be used by an attacker to mitigate security-violation
+    triggered data erasure.
+  d:
+    Flash operation should not be modifiable:
+      - Potentially write garbage data after erase.
+  model:
+    - invasive
+  surf:
+    - Flash controls
+    - Charge pump operation
+  vect:
+    - FIB editing
+
+attack_10:
+  a: Prevent Flash Write
+  d:
+    Flash operation should not be modifiable:
+      - Read back the Flash value after it has been written to make sure the proper
+        data is stored.
+  model:
+    - invasive
+  surf:
+    - Flash controls
+    - Charge pump operation
+  vect:
+    - FIB editing
+
+attack_11:
+  a: Voltage Fault Injection instruction modification
+  d:
+    Attackers should not be able to modify instructions through VCC glitching:
+      - Use parity checks, data integrity checks. Trap undefined instructions.
+      - Use of power filtering and glitch detectors
+  model:
+    - non-invasive
+  surf:
+    - instruction corruption
+  vect:
+    - VCC glitching
+
+attack_12:
+  a: Laser Fault Injection instruction modification
+  d:
+    Attackers should not be able to modify instructions through LFI:
+      - Use parity checks, data integrity checks. Trap undefined instructions.
+      - Use light sensors to detect the attack and disable circuitry as a mitigation
+  model:
+    - semi-invasive
+  surf:
+    - instruction corruption
+  vect:
+    - LFI
+
+attack_13:
+  a: Electro-Magnetic Fault Injection instruction modification
+  d:
+    Attackers should not be able to modify instructions through EMA:
+      - Use parity checks, data integrity checks. Trap undefined instructions.
+  model:
+    - semi-invasive
+  surf:
+    - instruction corruption
+  vect:
+    - EMA
+
+attack_14:
+  a: Micro-probing Instruction Modification
+  d:
+    Attackers should not be able to modify instructions through micro-probing:
+      - important signals could be routed on the lowest layers
+      - high signal density will limit access to several signals at once
+  model:
+    - invasive
+  surf:
+    - instruction corruption
+  vect:
+    - micro-probing
+
+attack_15:
+  a: Use test pads to gain privileges
+  d:
+    Attackers should not be allowed to connect to test pads of an IC:
+      - Test pads should not be present any more after the engineering and debug phase
+        of the IC.
+  model:
+    - invasive
+  surf:
+    - abuse test circuitry
+  vect:
+    - micro-probing
+
+attack_16:
+  a: Function mapping from photo-emission
+  d:
+    Photo-emission spots should not leak the position of functions inside the IC:
+      - Duplicate emission sources at various location of the digital circuitry
+  model:
+    - semi-invasive
+  surf:
+    - Localize weak spots
+  vect:
+    - photo-emission microscopy
+
+attack_17:
+  a: Function mapping from EM
+  d:
+    EM radiation should not leak the position of functions inside the IC:
+      - Use dummy logic that will activate various EM spots across the digital circuitry
+  model:
+    - semi-invasive
+  surf:
+    - Localize weak spots
+  vect:
+    - EMA
+
+attack_18:
+  a: Fuse reading after their copy to a dedicated RAM
+  d:
+    Make sure that the copy process will not leak fuse data:
+      - Encrypted copy only of the fuse.
+  model:
+    - semi-invasive
+  surf:
+    - Cryptographic material extraction
+    - Privilege escalation
+  vect:
+    - Reverse-Engineering
+
+attack_19:
+  a: Fuse optical readout
+  d:
+    Make sure that reading fuse values from pictures is not feasible:
+      - Encrypted fuses
+      - Use of scrambling inside the fuse array.
+      - Use of oxide breakdown technology for fuses will make them harder to read.
+  model:
+    - invasive
+  surf:
+    - Cryptographic material extraction
+    - Privilege escalation
+  vect:
+    - Reverse-Engineering
+
+attack_20:
+  a: Fuse modification
+  d:
+    Programmed fuses should not be modifiable by the attacker.:
+      - Prefer using oxide breakdown fuse technology.
+  model:
+    - invasive
+  surf:
+    - Cryptographic material extraction
+    - Privilege escalation
+  vect:
+    - FIB editing
+
+# TODO: surface privilege escalation might be wrong
+attack_21:
+  a: VFI JTAG reactivation
+  d:
+    Locked JTAG should not be able to be re-activated by the attacker using VCC glitching:
+      - Multiple activation signals
+      - Do not wire bond the JTAG pads of the IC unless this feature is really necessary.
+  model:
+    - non-invasive
+  surf:
+    - Privilege escalation
+  vect:
+    - VCC glitching
+
+attack_22:
+  a: LFI JTAG reactivation
+  d:
+    Locked JTAG should not be able to be re-activated by the attacker using LFI:
+      - Do not wire bond the JTAG pads of the IC unless this feature is really necessary.
+      - Multiple activation signals
+  model:
+    - semi-invasive
+  surf:
+    - Privilege escalation
+  vect:
+    - LFI
+
+attack_23:
+  a: EMA JTAG reactivation
+  d:
+    Locked JTAG should not be able to be re-activated by the attacker using EMA:
+      - Do not wire bond the JTAG pads of the IC unless this feature is really necessary.
+      - Multiple activation signals
+  model:
+    - semi-invasive
+  surf:
+    - Privilege escalation
+  vect:
+    - EMA
+
+attack_24:
+  a: Invasive JTAG reactivation
+  d:
+    Locked JTAG should not be able to be re-activated by the attacker using FIB modification with or without micro-probing:
+      - Multiple activation signals
+      - Do not wire bond the JTAG pads of the IC unless this feature is really necessary.
+  model:
+    - invasive
+  surf:
+    - Privilege escalation
+  vect:
+    - FIB editing
+    - micro-probing
+
+attack_25:
+  a: UV erase of Protection bits
+  d:
+    Flash memory should not be used to store security flags:
+      - Use fuse instead
+      - Mix flags with other data
+      - UV light sensors
+  model:
+    - semi-invasive
+  surf:
+    - Privilege escalation
+  vect:
+    - UV illummination

@@ -1,0 +1,216 @@
+---
+
+# Physical side-channel attacks
+
+sca-power-spa:
+  a: Secret-dependent operations lead to secret extraction through measuring power consumption
+  d: Constant-time/flow implementation: []
+  surf: [Implementation]
+  vect: [Side-channel attack, Power side-channel attack]
+  model: [Physical, Passive]
+  tag: [Implemenatation attack, Side-channel attack, SPA]
+
+sca-power-spa-exponentiation:
+  a: Key-dependent exponentiation leads to single-trace key extraction through measuring power consumption
+  d: Constant-time/flow implementation: [Square and multiply always, Montgomery ladder]
+  surf: [Cryptographic algorithm implementation, RSA, Exponentiation, private key] 
+  vect: [Side-channel attack, Power side-channel attack]
+  model: [Physical, passive] 
+  tag: [Implementation attack, Side-Channel attack, Power side channel, SPA]
+
+sca-em-spa-exponentiation:
+  a: Key-dependent exponentiation leads to single-trace key extraction through measuring electromagnetic emanations
+  d: 
+    Constant-time/flow implementation: [Square and multiply always, Montgomery ladder]
+    Add security sensors: [EM proximity sensor]
+  surf: [Cryptographic algorithm implementation, RSA, Exponentiation, private key] 
+  vect: [Side-channel attack, Electromagnetic side-channel attack]
+  model: [Physical, passive] 
+  tag: [Implementation attack, Side-Channel attack, Electromagnetic side channel, SPA]
+
+sca-power-spa-multiplication:
+  a: Key-dependent multiplication leads to key extraction through measuring power consumption
+  d: Constant-time/flow implementation: [Double and add always, Montgomery ladder]
+  surf: [Cryptographic algorithm implementation, ECC, Multiplication, private key]
+  vect: [Side-channel attack, Power side-channel attack]
+  model: [Physical, passive]
+  tag: [Implementation attack, Side-Channel attack, Power side channel, SPA]
+
+sca-em-spa-multiplication:
+  a: Key-dependent multiplication leads to key extraction through measuring electromagnetic emanations
+  d: 
+    Constant-time/flow implementation: [Double and add always, Montgomery ladder]
+    Add security sensors: [EM proximity sensor]
+  surf: [Cryptographic algorithm implementation, ECC, Multiplication, private key]
+  vect: [Side-channel attack, Electromagnetic side-channel attack]
+  model: [Physical, passive]
+  tag: [Implementation attack, Side-Channel attack, Electromagnetic side channel, SPA]
+
+sca-power-dpa:
+  a: Correlation between power consumption and key material in an unprotected cryptographic implementation leads to key extraction
+  d: 
+    Decouple the power consumption from the key: [Data randomization, Masking, Blinding],
+    Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Side-channel attack, Power side-channel attack]
+  model: [Physical, passive]
+  tag: [Implementation attack, Side-Channel attack, Power side channel, DPA, CPA]
+
+sca-em-dpa:
+  a: Correlation between electromagnetic emanations and key material in an unprotected cryptographic implementation leads to key extraction
+  d: 
+    Decouple the electromagnetic emanations from the key: [Data randomization, Masking, Blinding],
+    Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Side-channel attack, Electromagnetic side-channel attack]
+  model: [Physical, passive]
+  tag: [Implementation attack, Side-Channel attack, Electromagnetic side channel, DPA, CPA]
+
+sca-power-2ndorder-dpa:
+  a: Second order correlation between power consumption and key material in a first-order protected cryptographic implementation leads to key extraction
+  d: 
+    Decouple the power consumption from the key: [Second order masking]
+    Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Side-channel attack, Power side-channel attack]
+  model: [Physical, passive]
+  tag: [Implementation attack, Side-Channel attack, Power side channel, DPA, CPA]
+
+sca-em-2ndorder-dpa:
+  a: Second order correlation between electromagnetic emanations and key material in a first-order protected cryptographic implementation leads to key extraction
+  d: 
+    Decouple the electromagnetic emanations from the key: [Second order masking]
+    Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Side-channel attack, Electromagnetic side-channel attack]
+  model: [Physical, passive]
+  tag: [Implementation attack, Side-Channel attack, Electromagnetic side channel, DPA, CPA]
+
+sca-power-higherorder-dpa:
+  a: Nth order correlation between power consumption and key material in an (n-1)-order protected cryptographic implementation leads to key extraction
+  d: 
+    Decouple the power consumption from the key: [nth-order masking]
+    Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Side-channel attack, Power side-channel attack]
+  model: [Physical, passive]
+  tag: [Implementation attack, Side-Channel attack, Power side channel, DPA, CPA]
+
+sca-em-higherorder-dpa:
+  a: Nth order correlation between electromagnetic emanations and key material in an (n-1)-order protected cryptographic implementation leads to key extraction
+  d: 
+    Decouple the electromagnetic emanations from the key: [nth-order masking]
+    Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Side-channel attack, Electromagnetic side-channel attack]
+  model: [Physical, passive]
+  tag: [Implementation attack, Side-Channel attack, Electromagnetic side channel, DPA, CPA]
+
+sca-alignment:
+  a: Misaligned traces can be aligned using alignment techniques
+  d: Randomize waveform shape: [Current scrambling]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Side-channel attack, Power side-channel attack]
+  model: [Physical, passive]
+  tag: [Implementation attack, Side-Channel attack]
+
+# Physical fault attacks
+fi-voltage-instructionskip:
+  a: Voltage glitching leads to instruction skip
+  d: 
+    Harden computations: [Information redundancy, Parallel computations]
+    Add security sensors: [Voltage sensor]
+    Hide critical operations: [Instruction shuffling, Dummy instructions, Clock jitter]    
+  surf: [Implementation]
+  vect: [Fault attack, Laser, Active]
+  model: [Physical, Active]
+  type: [Implementation attack, Fault attack, Voltage glitching]
+
+fi-clock-instructionskip:
+  a: Clock glitching leads to instruction skip
+  d: 
+    Harden computations: [Information redundancy, Parallel computations]
+    Add security sensors: [Clock sensor]
+    Hide critical operations: [Instruction shuffling, Dummy instructions, Clock jitter]   
+  surf: [Implementation]
+  vect: [Fault attack, Laser, Active]
+  model: [Physical, Active]
+  type: [Implementation attack, Fault attack, Clock glitching]
+
+fi-laser-instructionskip:
+  a: Laser fault injection leads to instruction skip
+  d: 
+    Harden computations: [Information redundancy, Parallel computations]
+    Add security sensors: [Light sensor, Temperature sensor]
+    Hide sensitive parts of the chip: [Glue logic]
+    Add shielding: [Metal layers]
+    Use modern technology: [Smaller technology, 3D packaging]
+    Hide critical operations: [Instruction shuffling, Dummy instructions, Clock jitter] 
+  surf: [Implementation]
+  vect: [Fault attack, Laser, Active]
+  model: [Physical, Active]
+  type: [Implementation attack, Fault attack, Laser fault injection]
+
+fi-em-instructionskip:
+  a: Electromagnetic fault injection leads to instruction skip
+  d:
+    Harden computations: [Information redundancy, Parallel computations]
+    Hide sensitive parts of the chip: [Glue logic]
+    Add shielding: [Metal layers]
+    Add security sensors: [EM proximity sensor]
+    Use modern technology: [Smaller technology, 3D packaging]
+    Hide critical operations: [Instruction shuffling, Dummy instructions, Clock jitter] 
+  surf: [Implementation]
+  vect: [Fault attack, Laser, Active]
+  model: [Physical, Active]
+  type: [Implementation attack, Fault attack, Electromagnetic fault injection]
+
+fi-voltage-dfa:
+  a: Voltage glitching causes fault leading to key extraction using differential fault analysis
+  d:
+    Harden computations: [Ineffective computations]
+    Add security sensors: [Voltage sensor]
+    Hide critical operations: [Instruction shuffling, Dummy instructions, Clock jitter]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Fault attack]
+  model: [Physical, Active]
+  type: [Implementation attack, Fault attack, Voltage glitching, DFA]
+
+fi-clock-dfa:
+  a: Clock glitching causes fault leading to key extraction using differential fault analysis
+  d:
+    Harden computations: [Ineffective computations]
+    Add security sensors: [Clock sensor]
+    Hide critical operations: [Instruction shuffling, Dummy instructions, Clock jitter]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Fault attack]
+  model: [Physical, Active]
+  type: [Implementation attack, Fault attack, Clock glitching, DFA]
+
+fi-laser-dfa:
+  a: Laser fault injection causes fault leading to key extraction using differential fault analysis
+  d:
+    Harden computations: [Ineffective computations]
+    Add security sensors: [Light sensor, Temperature sensor]
+    Hide sensitive parts of the chip: [Glue logic]
+    Add shielding: [Metal layers]
+    Use modern technology: [Smaller technology, 3D packaging]
+    Hide critical operations: [Instruction shuffling, Dummy instructions, Clock jitter]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Fault attack]
+  model: [Physical, Active]
+  type: [Implementation attack, Fault attack, Laser fault injection, DFA]
+
+fi-em-dfa:
+  a: Electromagnetic fault injection causes fault leading to key extraction using differential fault analysis
+  d:
+    Harden computations: [Ineffective computations]
+    Hide sensitive parts of the chip: [Glue logic]
+    Add shielding: [Metal layers]
+    Add security sensors: [EM proximity sensor]
+    Use modern technology: [Smaller technology, 3D packaging]
+    Hide critical operations: [Instruction shuffling, Dummy instructions, Clock jitter]
+  surf: [Cryptographic algorithm implementation]
+  vect: [Fault attack]
+  model: [Physical, Active]
+  type: [Implementation attack, Fault attack, Electromagnetic fault injection, DFA]

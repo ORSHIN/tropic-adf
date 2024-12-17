@@ -1,0 +1,109 @@
+fi_dbg:
+  a: Enabling debug interface via fault injection
+  d: 
+    Hardware fault tolerance: [Spatial/temporal redundancy, Register ECC, Hardened PC, Hardened CSRs]
+    Software implemented fault tolerance: [Redundant execution, Control flow integrity enforcement]
+    Fault injection testing: [FI simulation, FI emulation, Software FI]
+  surf: [SE, MCU, Bootloader execution, Debug interface]
+  vect: [Fault injection]
+  model: [Physical access, Instruction skip, Control flow modification]
+
+fw_verif_skip:
+  a: Firmware verification skip
+  d: 
+    Hardware fault tolerance: [Spatial/temporal redundancy, Register ECC, Hardened PC, Hardened CSRs]
+    Bus protocol hardening: [Bus handshake signals, Bus integrity signals]
+    Software implemented fault tolerance: [Redundant execution, Control flow integrity enforcement]
+    Fault injection testing: [FI simulation, FI emulation, Software FI]
+  surf: [SE, MCU, Bootloader execution]
+  vect: [Fault injection]
+  model: [Physical access, Instruction skip, Control flow modification]
+
+data_extraction:
+  a: Sensitive data extraction
+  d: 
+    Noise introduction: [Dummy instruction insertion, Random instruction hints]
+    Power balancing: [Power consumption estimation]
+    Constant-time implementation: [Data independent timing]
+    Reduction of profiling infrastructure: [Reduced performance counter in non-machine mode]
+  surf: [Microprocessor, Cryptographic operation]
+  vect: [Side-channel leakage]
+  model: [Physical access, Power analysis, Electromagnetic analysis]
+
+dfa:
+  a: Differential fault analysis
+  d: 
+    Hardware fault tolerance: [Spatial/temporal redundancy, Register ECC, Hardened PC, Hardened CSRs]
+    Software implemented fault tolerance: [Redundant execution, Control flow integrity enforcement]
+    Fault injection testing: [FI simulation, FI emulation, Software FI]
+    Security alerts: [Major alert, Minor alert]
+  surf: [Microprocessor, Cryptographic operation]
+  vect: [Fault injection, Bus tampering]
+  model: [Physical access, Arbitrary code execution, Bitflip]
+
+code_exe:
+  a: Arbitrary code execution
+  d: 
+    Proper memory management: [ASLR, Input validation, Bounds checking, Non-executable stack, Canaries]
+    Code analysis: [Manual, Static, Dynamic]
+    Secure Boot Verification: [Secure Boot, Code Signing, Secure Boot Keys]
+    Firmware Integrity Checks: [Integrity Verification, Digital Signatures, Hash Functions]
+  surf: [Secure bootloader, Memory management]
+  vect: [Buffer manipulation, Pointer manipulation, Firmware verification skip]
+  model: [Physical access, Non-volatile memory tampering, Buffer overflow]
+
+
+bus_tampering:
+  a: Bus transaction injection
+  d: 
+    Security alerts: [Major alert, Minor alert]
+    Bus protocol hardening: [Bus handshake signals, Bus integrity signals]
+  surf: [SoC, Bus interface, Protocol]
+  vect: [Fault injection, Physical tampering]
+  model: [Physical access, Signal injection]
+
+
+
+boot_cf_sca:
+  a: Secure bootloader control flow analysis
+  d: 
+    Noise introduction: [Dummy instruction insertion, Random instruction hints]
+    Power balancing: [Power consumption estimation]
+    Constant-time implementation: [Data independent timing]
+  surf: [SE, Secure bootloader execution]
+  vect: [Side-channel leakage]
+  model: [Physical access, Power analysis, Electromagnetic analysis]
+
+mal_firmw:
+  a: Key material extraction from SE through malicious firmware
+  d:
+    Key storage: [Physical memory protection, Physical memory attribution, Machine mode access only]
+    Secure Boot Verification: [Secure Boot, Code Signing, Secure Boot Keys]
+    Firmware Integrity Checks: [Integrity Verification, Digital Signatures, Hash Functions]
+  surf: [Non-volatile memory, Firmware image]
+  vect: [Malicious firmware, Vulnerable firmware image verification, Memory corruption]
+  model: [Physical access, Non-volatile memory tampering, Malicious firmware update]
+
+buff_overflow_fi:
+  a: Buffer overflow exploitation after fault injection
+  d: 
+    Proper memory management: [ASLR, Input validation, Bounds checking, Non-executable stack, Canaries]
+    Code analysis: [Manual, Static, Dynamic]
+    Hardware fault tolerance: [Spatial/temporal redundancy, Register ECC, Hardened PC, Hardened CSRs]
+    Software implemented fault tolerance: [Redundant execution, Control flow integrity enforcement]
+    Fault injection testing: [FI simulation, FI emulation, Software FI]
+  surf: [SE, MCU, Bootloader execution, Debug interface]
+  vect: [Fault injection]
+  model: [Physical access, Instruction skip, Control flow modification]
+
+timing_info:
+  a: Collection of timing information
+  d: 
+    Noise introduction: [Dummy instruction insertion, Random instruction hints]
+    Power balancing: [Power consumption estimation]
+    Reduction of profiling infrastructure: [Reduced performance counter in non-machine mode]
+    Constant-time implementation: [Data independent timing]
+  surf: [SoC, Microprocessor, Secure bootloader execution]
+  vect: [Profiling]
+  model: [Physical access, Power analysis, Electromagnetic analysis, Code execution, Hardware performance counter]
+  tag: [SCA]

@@ -1,0 +1,164 @@
+---
+# yamllint disable rule:line-length
+
+# FIDO AD
+
+# specific attacks
+
+time_khandles: # child of auth_sca
+  a: Timing Attack on Key Handles
+  d:
+    Reduce Time Difference between Checking Random and Target Key Handles:
+      [
+        Choose a Non-Time-Sensitive Key Derivation Function,
+        Use Resident Keys
+      ]
+    Change Client's Implementation of AllowCredential Parameter:
+      [
+        Deduplication of Allow Credential List,
+        Randomly Delay Errors,
+        Limit AllowCredential List Size
+      ]
+  year: 2022
+  surf: [Authenticator, Client, Key Handle, AllowCredential]
+  vect: [Timing Attack]
+  model: [Remote, SCA, Linking]
+  tag: [Linking]
+  risk: []
+  cve: ["31742"]
+  cwe: ["208"]
+  capec: ["621"]
+
+# https://arxiv.org/pdf/2205.08071.pdf
+
+emsca_secel:  # child of auth_sca
+  a: Electromagnetic Side Channel Attack on Secure Element
+  d:
+    Implement Electromagnetic Side-Channel Resistant Chip Design: []
+  year: 2021
+  surf: [Authenticator, NXP P5 SmartMX, NXP A700X Secure Element]
+  vect: [Electromagnetic Attack]
+  model: [Evil Maid, SCA]
+  tag: [NXP A700X Secure Element]
+  risk: []
+  cve: ["3011"]
+  cwe: ["1300"]
+  capec: ["622"]
+
+# https://ninjalab.io/a-side-journey-to-titan/
+
+ble_titan:
+  a: Authentication Bypass Exploiting BLE Misconfiguration
+  d:
+    Solve Misconfiguration: []
+  year: 2019
+  surf: [Authenticator, BLE, Titan Security Key]
+  vect: [Authentication Bypass]
+  model: [Proximity, Relay]
+  tag: [BLE, Titan Security Key]
+  risk: []
+  cve: []
+  cwe: ["702"]
+  capec: ["115"]
+
+# https://techcrunch.com/2019/05/15/google-recalls-its-bluetooth-titan-security-keys-because-of-a-security-bug/
+
+taa_ossh:
+  a: OpenSSH Trivial Authentication Attack
+  d:
+    Fix Authentication Misconfiguration:
+      [
+        Modify OpenSSH "None Authentication" Options by Implementing Agent Restrictions
+      ]
+  year: 2021
+  surf: [Client, RP, OpenSSH]
+  vect: [Authentication Bypass]
+  model: [Remote]
+  tag: []
+  risk: []
+  cve: ["36368"]
+  cwe: ["290"]
+  capec: ["115"]
+
+# https://bugzilla.mindrot.org/show_bug.cgi?id=3316
+
+wan_ac:
+  a: Authentication Bypass by Incorrect Access Control in WebAuthN
+  d:
+    Fix Access Control Misconfiguration:
+      [
+        Include Missing User Presence Check
+      ]
+  year: 2021
+  surf: [Client, RP, WebAuthN]
+  vect: [Authentication Bypass]
+  model: [Remote]
+  tag: []
+  risk: []
+  cve: ["38299"]
+  cwe: ["284"]
+  capec: ["115"]
+
+# https://www.fzi.de/2021/08/18/fsa-2021-1-fehlende-ueberpruefung-von-user-presence-in-webauthn-framework/
+
+wan_sbo:
+  a: Possible Exploitable Crash by Register Stack-Buffer Overflow in WebAuthN
+  d:
+    Fix Stack Overflow Bug:
+      [
+        Change Problematic Assertition into a Runtime Check
+      ]
+  year: 2021
+  surf: [Client, RP, WebAuthN]
+  vect: [Stack Overflow]
+  model: [Remote]
+  tag: []
+  risk: []
+  cve: ["28281"]
+  cwe: ["121"]
+  capec: ["100"]
+
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1755621
+
+sca_i2c:
+  a: Firmware Manipulation via Debug Interface due to I2C Protocol Vulnerability
+  d:
+    Protect Credential Transmission between Microcontroller and Secure Element :
+    [
+      Insource MAC Hash Computation to the Microcontroller
+    ]
+  year: 2020
+  surf: [Authenticator, NitroKey, Microcontroller, Secure Element, I2C Protocol, Firmware]
+  vect: [Crypto Attack, Firmware Manipulation]
+  model: [Physical, Evil Maid, Supply Chain]
+  tag: [NitroKey, NitroKey FIDO U2F, I2C, EFM8UB, ATECC508A]
+  risk: []
+  cve: ["12061"]
+  cwe: ["319", "523"]
+  capec: ["37"]
+  
+# https://eprint.iacr.org/2021/640.pdf
+
+sca_deb:
+  a: Firmware Manipulation via Debug Interface due to Flash Memory Read-Out Protection Vulnerabilities
+  d:
+    Protection against Flawed Read-out Protection :
+    [
+      Store the OTP Secrets Encrypted in Flash Memory and Derive a Key from this PIN
+    ]
+    Prevent Offline Brute Force Attacks :
+    [
+      Require Minimum PIN length,
+      Use Hash-Based Key Derivation Function
+    ]
+  year: 2020
+  surf: [Authenticator, NitroKey, Microcontroller, Firmware, Flash Memory]
+  vect: [Firmware Manipulation]
+  model: [Physical, Evil Maid, Supply Chain]
+  tag: [NitroKey, NitroKey Pro 2, Microcontroller, STM32F1, SmartMX P5CD081]
+  risk: []
+  cve: []
+  cwe: ["1314"]
+  capec: ["679"]
+
+  # https://eprint.iacr.org/2021/640.pdf
