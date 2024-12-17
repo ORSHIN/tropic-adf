@@ -298,7 +298,7 @@ attack_20:
   vect:
     - FIB editing
 
-# TODO: surface privilege escalation might be wrong
+# NOTE: surface privilege escalation might be wrong
 attack_21:
   a: VFI JTAG reactivation
   d:

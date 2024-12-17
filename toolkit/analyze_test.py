@@ -2,6 +2,7 @@
 analyze_test.py
 
 """
+
 from pathlib import Path
 from wordcloud import WordCloud
 import pandas as pd
@@ -20,7 +21,6 @@ from analyze import (
 
 @pytest.fixture
 def bt_ads():
-    # TODO: review this one because depending on where you execute pytest changes
     bt_path = Path("yaml/bt.yaml")
     return get_dataframe(bt_path)
 

@@ -5,7 +5,6 @@ Perform some analyses to show the effectiveness of the framework.
 
 """
 
-import os
 from pathlib import Path
 from typing import List
 from wordcloud import WordCloud
@@ -62,30 +61,10 @@ def filter_dataframe(ads: pd.DataFrame, key: str, val: str) -> pd.DataFrame:
     return filtered_ads
 
 
-# TODO: rename this func
 def get_set(ads: pd.DataFrame, key: str, val: str) -> pd.DataFrame:
     """Return a set of rows containing key and val in a DataFrame"""
 
     return filter_dataframe(ads, key, val)
-
-    # for v in val.split("and"):
-    #     v = v.strip()
-    #     if v.startswith("not "):
-    #         negated.append(v[4:].strip())
-    #     else:
-    #         non_negated.append(v.strip())
-
-    # if non_negated:
-    #     ads_set = ads[
-    #         ads[key].map(lambda x: any(val in x for val in non_negated))
-    #     ].copy()
-
-    # if negated:
-    #     ads_set = ads_set[
-    #         ~ads_set[key].map(lambda x: any(val in x for val in negated))
-    #     ].copy()
-
-    # return ads_set
 
 
 def get_map(ads: pd.DataFrame, taxonomy: List[str], key: str) -> list[pd.DataFrame]:

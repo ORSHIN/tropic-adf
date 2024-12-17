@@ -3,7 +3,6 @@ ad.py
 
 File containing the AD datastructure templates
 """
-# TODO: use named dictionaries?
 
 AD_DICT = {
     "ad_name1": {

@@ -233,17 +233,6 @@ bluemirror_bm_2:
   cve: ["26557"]
   cwe: ["287"]
 
-bluemirror_bm_3:
-  a: Improper cryptographic use in BM Provisioning (M-A3)
-  d:
-    TODO: [TODO]
-  year: 2020
-  surf: [BM, Provisioning, Authentication]
-  vect: [MitM, Relay, Brute force]
-  model: [Proximity, MitM]
-  tag: [Protocol, BMP]
-  cve: ["26556", "26559"]
-  cwe: ["307", "863"]
 
 crackle_ble:
   a: BLE Key Derivation (CRACKLE)

@@ -1,12 +1,14 @@
 """
 Schema to validate AD dicts
 
-surf is a list of strings, where each string is more specific. E;g;, for the
+surf is a list of strings, where each string is more specific. E.g., for the
 KNOB attack surf = [BC, Session, Entropy negotiation].
 
-NOTE:
-    order of fields does not matter in the schema.
-    Schema([str]) validates an array of str
+The order of the fields does not matter in the schema.
+
+Schema([str]) validates an array of str.
+
+TODO is currently a valid word in the dictionary>
 
 """
 
@@ -223,7 +225,7 @@ def _check_list(list1: list, key: str, list2=None) -> bool:
 def check_schema(ad_dict: dict, words=None):
     """Check schema and fields"""
 
-    # TODO: Once stable move to https://github.com/SchemaStore/schemastore
+    # NOTE: Once stable move to https://github.com/SchemaStore/schemastore
     schema = Schema(
         {
             Regex(r"^[a-z0-9_]+$"): {

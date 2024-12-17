@@ -31,7 +31,7 @@ def _parse_excel(path: Path) -> dict:
     raise NotImplementedError
 
 
-# TODO: this was ad hoc, to modify or delete after
+# NOTE: this is ad hoc,
 def _parse_csv(path: Path) -> dict:
     """Parse from a csv AD file in a Python dict"""
     with open(path) as csv_file:
