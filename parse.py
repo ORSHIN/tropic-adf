@@ -63,7 +63,7 @@ def _parse_xml(path: Path) -> dict:
     with open(path, "rb") as file:
         xml_dict = xmltodict.parse(file)["root"]
 
-    # XXX: remove None values from AD lists and convert year into a int
+    # NOTE: remove None values from AD lists and convert year into a int
     for ad in xml_dict:
         xml_dict[ad]["year"] = int(xml_dict[ad]["year"])
         for key in [

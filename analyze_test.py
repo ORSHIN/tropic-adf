@@ -88,8 +88,6 @@ def test_chains(bt_ads: pd.DataFrame):
     assert type(bias_lsc_chain) == graphviz.Digraph
     bias_screfl_chain = get_chain(bt_ads, "bias_screfl", "chain-bias-screfl")
     assert type(bias_screfl_chain) == graphviz.Digraph
-    # FIXME: knob_bc should be after bias_lsc
-    # get_chain(bt_ads, "bias_scdown", "chain-bias-scdown")
 
 
 @pytest.mark.filterwarnings("ignore:The get_cmap function")
