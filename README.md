@@ -145,6 +145,8 @@ make test-modname
 
 ## Acknowledgements
 
+We thank the ADF dev team.
+
 This work was partially funded by the European Union under grant agreement no.
 101070008 (ORSHIN project) and by the European Commission through the Horizon
 2020 research and innovation program Belfort ERC Advanced Grant 101020005
