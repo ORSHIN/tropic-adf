@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+NOTE: XML is NOT the best language to write ADs by hand. For example, it requires empty fields
+to produce lists in Python, the parser has to
+to some extra work. E.g., see vref tags
+-->
+<root>
+  <ad_name1>
+    <a>Attack 1</a>
+    <d>
+      <policy1>mech1</policy1>
+      <policy1>mech2</policy1>
+      <policy2>mech1</policy2>
+      <policy2>mech2</policy2>
+    </d>
+    <surf>surf</surf>
+    <surf>subsurf</surf>
+    <surf>subsubsurf</surf>
+    <vect>vector1</vect>
+    <vect>vector2</vect>
+    <model>model1</model>
+    <model>model2</model>
+    <tag>tag1</tag>
+    <tag>tag2</tag>
+    <risk>score1</risk>
+    <risk>score2</risk>
+    <year>2023</year>
+    <cve>123</cve>
+    <cve>456</cve>
+    <cwe>123</cwe>
+    <cwe>456</cwe>
+    <capec>123</capec>
+    <capec>456</capec>
+    <vref>vendor-ref1</vref>
+    <vref></vref>
+  </ad_name1>
+  <ad_name2>
+    <a>Attack 2</a>
+    <d>
+      <policy1>mech1</policy1>
+      <policy1>mech2</policy1>
+      <policy2>mech1</policy2>
+      <policy2>mech2</policy2>
+    </d>
+    <surf>surf</surf>
+    <surf>subsurf</surf>
+    <surf>subsubsurf</surf>
+    <vect>vector1</vect>
+    <vect>vector2</vect>
+    <model>model1</model>
+    <model>model2</model>
+    <tag>tag1</tag>
+    <tag>tag2</tag>
+    <risk>score1</risk>
+    <risk>score2</risk>
+    <year>2023</year>
+    <cve>123</cve>
+    <cve>456</cve>
+    <cwe>123</cwe>
+    <cwe>456</cwe>
+    <capec>123</capec>
+    <capec>456</capec>
+    <vref>vendor-ref1</vref>
+    <vref></vref>
+  </ad_name2>
+  <ad_name3>
+    <a>Attack 3</a>
+    <d>
+      <policy1>mech1</policy1>
+      <policy1>mech2</policy1>
+      <policy2>mech1</policy2>
+      <policy2>mech2</policy2>
+    </d>
+    <surf>surf</surf>
+    <surf>subsurf</surf>
+    <surf>subsubsurf</surf>
+    <vect>vector1</vect>
+    <vect>vector2</vect>
+    <model>model1</model>
+    <model>model2</model>
+    <tag>tag1</tag>
+    <tag>tag2</tag>
+    <risk>score1</risk>
+    <risk>score2</risk>
+    <year>2023</year>
+    <cve>123</cve>
+    <cve>456</cve>
+    <cwe>123</cwe>
+    <cwe>456</cwe>
+    <capec>123</capec>
+    <capec>456</capec>
+    <vref>vendor-ref1</vref>
+    <vref></vref>
+  </ad_name3>
+</root>

@@ -1,0 +1,8 @@
+schema
+pyyaml
+yamllint
+pandas
+graphviz
+xmltodict
+wordcloud
+tomli; python_version < '3.11'

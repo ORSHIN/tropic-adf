@@ -1,0 +1,61 @@
+# AD object in TOML: 3 candidates
+# taplo: schema validation and formatting
+# dprint: fixing
+
+# https://realpython.com/python-toml/
+# try:
+#     import tomllib
+# except ModuleNotFoundError:
+#     import tomli as tomllib
+
+# NOTE: dotted entries, best option
+[ad_name1]
+# Mandatory fields
+a = "Attack 1"
+d.policy1 = ["mech1", "mech2"]
+d.policy2 = ["mech1", "mech2"]
+surf = ["surf", "subsurf", "subsubsurf"]
+vect = ["vector1", "vector2"]
+model = ["model1", "model2"]
+tag = ["tag1", "tag2"]
+# Optional fields
+risk = ["score1", "score2"]
+year = 2023
+cve = ["123", "456"]
+cwe = ["123", "456"]
+capec = ["123", "456"]
+vref = ["vendor-ref1"]
+
+# NOTE: inline entries,
+[ad_name2]
+# Mandatory fields
+a = "Attack 2"
+d = { policy1 = ["mech1", "mech2"], policy2 = ["mech1", "mech2"] }
+surf = ["surf", "subsurf", "subsubsurf"]
+vect = ["vector1", "vector2"]
+model = ["model1", "model2"]
+tag = ["tag1", "tag2"]
+# Optional fields
+risk = ["score1", "score2"]
+year = 2023
+cve = ["123", "456"]
+cwe = ["123", "456"]
+capec = ["123", "456"]
+vref = ["vendor-ref1"]
+
+# NOTE: nested tables, indentation does not matter, best
+[ad_name3]
+a = "Attack 3"
+surf = ["surf", "subsurf", "subsubsurf"]
+vect = ["vector1", "vector2"]
+model = ["model1", "model2"]
+tag = ["tag1", "tag2"]
+risk = ["score1", "score2"]
+year = 2023
+cve = ["123", "456"]
+cwe = ["123", "456"]
+capec = ["123", "456"]
+vref = ["vendor-ref1"]
+[ad_name3.d]
+policy1 = ["mech1", "mech2"]
+policy2 = ["mech1", "mech2"]
