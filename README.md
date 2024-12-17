@@ -10,16 +10,13 @@ wallet.
 
 The repository has the following structure:
 
-* `yaml` contains the AD files
+* `yaml/` contains the AD files
 * `analyze.py` automatically analyze ADs (maps, chains, trees, ...)
 * `check.py` check syntax and semantic of the ADs
 * `parse.py` parse ADs from other sources (CAPEC, ...)
 * `*_test.py` test scripts
-* `Makefile` automate tasks
+* `Makefile` run tests, scripts, etc
 
-To initialize the development environment:
-* Run `make dev-setup`
-* Ideally use a text editor with YAML and Python support.
 
 ## ADF Research Paper (ACM TECS)
 
