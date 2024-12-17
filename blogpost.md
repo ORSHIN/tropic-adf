@@ -25,12 +25,19 @@ Imagine we are developing a new crypto wallet with the following requirements. T
 Before deploying it, it's essential to conduct a threat model exercise to identify and mitigate potential security and privacy risks. The ADF can help us achieve this.
 
 We evaluated the ADF by using it to TM *seven orthogonal threat domains* for the crypto wallet:
-- Physical Side-Channel and Fault Injection Threats ([side-channel-phy.yaml]())
-- Micro architectural and Speculative Execution Threats ([microa.yaml]())
-- Pre-silicon Testing Threats ([presil.yaml]())
-- Physical Hardware Threats ([physical.yaml]())
-- FIDO2 Threats ([fido_*.yaml]())
-- BLE Protocol and Implementation Threats ([bt.yaml]())
+- Physical Side-Channel and Fault Injection Threats: [side-channel-phy.yaml](https://github.com/francozappa/adf/blob/main/catalog/side-channel-phy.yaml)
+- Micro architectural and Speculative Execution Threats:
+  [microa.yaml](https://github.com/francozappa/adf/blob/main/catalog/microa.yaml)
+- Pre-silicon Testing Threats:
+  [presil.yaml](https://github.com/francozappa/adf/blob/main/catalog/presil.yaml)
+- Physical Hardware Threats:
+  [physical.yaml](https://github.com/francozappa/adf/blob/main/catalog/physical.yaml)
+- FIDO2 Threats:
+  [fido_device.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_device.yaml),
+  [fido_solokey.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_solokey.yaml),
+  [fido_system.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_solokey.yaml).
+- BLE Protocol and Implementation Threats:
+  [bt.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_solokey.yaml)
 
 
 ## BLE Protocol and Implementation Threats for the Cryptowallet
