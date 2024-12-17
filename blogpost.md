@@ -102,7 +102,7 @@ get_defenses(ble_ads)
 
 The result gives a high level view of the threats that may be applicable to our device.
 
-![BLE threats](surface-tree.png)
+![BLE threats](figs/surface-tree.png)
 
 The ADs related to Bluetooth are contained in the `bt.yaml` file. The following is the `crackle` AD:
 
