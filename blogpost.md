@@ -212,7 +212,7 @@ With the identified threats, mitigations, and defenses, a security expert has al
 **Mitigating BLESA**: The BLESA threat applies to a BLE Central devices, however, since our Crypto Wallet is a Peripheral, we can fix it by disabling Central capabilities in the BLE stack when compiling it.
 
 
-** ETSI EN 303 645 process threats
+## ETSI EN 303 645 Process Threats
 
 The ETSI EN 303 645 is a standard for the cybersecurity of IoT devices. It is a mix of technical requirements (e.g., "no default password") and procedures (e.g., “keep software updated”). The positive aspect of the standard is the pragmatic approach in defining tangible results that the IoT device manufacturer should reach and how they can be demonstrated.
 
