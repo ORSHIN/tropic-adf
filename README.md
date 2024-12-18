@@ -107,8 +107,7 @@ and its *life cycle (process)*.
 We involved seven expert groups covering orthogonal threat categories spanning
 hardware, software, firmware, security, privacy, and protocols.
 
-1. **Security Pattern** (lead: Cristalli) covered *process threats from
-   the ISA/IEC 62443-4-1 standard*.
+1. **Security Pattern** (lead: Gringiani) covered *ETSI EN 303 645 process threats*.
    They produced 40 ADs in [62443-4-1/](yaml/62443-4-1).
 2. **KUL COSIC** (lead: De Meulemeester) covered *side channel and
    fault injection threats*.

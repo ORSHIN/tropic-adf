@@ -37,7 +37,8 @@ We evaluated the ADF by using it to TM *seven orthogonal threat domains* for the
   [fido_solokey.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_solokey.yaml),
   [fido_system.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_solokey.yaml).
 - BLE Protocol and Implementation Threats:
-  [bt.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_solokey.yaml)
+  [bt.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_solokey.yaml).
+ - ETSI EN 303 645 Process Threats:  [etsi.yaml](https://github.com/francozappa/adf/blob/main/catalog/etsi.yaml).
 
 
 ## BLE Protocol and Implementation Threats for the Cryptowallet
@@ -209,3 +210,58 @@ With the identified threats, mitigations, and defenses, a security expert has al
 **Injectable** is already fixed by the usage of Link Layer encryption.
 
 **Mitigating BLESA**: The BLESA threat applies to a BLE Central devices, however, since our Crypto Wallet is a Peripheral, we can fix it by disabling Central capabilities in the BLE stack when compiling it.
+
+
+**ETSI EN 303 645 process threats
+
+The ETSI EN 303 645 is a standard for the cybersecurity of IoT devices. It is a mix of technical requirements (e.g., "no default password") and procedures (e.g., “keep software updated”). The positive aspect of the standard is the pragmatic approach in defining tangible results that the IoT device manufacturer should reach and how they can be demonstrated.
+
+For this work, we focused on selecting the process-oriented requirements to discuss their relevance in securing the lifecycle of cryptographic wallets. These requirements help ensure secure development, deployment, and maintenance practices.
+
+We have developed 9 process ADs, each named according to the number and section of the relevant standard.
+
+The standard is divided into the following high-level sections, where we highlight the process requirements we selected:
+
+- *5.1*: No universal default passwords
+
+- *5.2*: Implement a means to manage reports of vulnerabilities. Process requirements:
+  - 5.2-1: Define and publish a vulnerability disclosure policy
+  - 5.2-2: Follow a documented vulnerability management process
+  - 5.2-3: Maintain and monitor a Software Bill of Materials (SBOM)
+
+- *5.3*: Keep software updated. Process requirements:
+  - 5.3-8: Ensure timely security updates
+  - 5.3-13: Define and adhere to a support period for security updates
+  - 5.3-14: Define hardware replacement support for constrained devices
+
+- *5.4*: Securely store sensitive security parameters
+
+- *5.5*: Communicate securely. Process requirement:
+  - 5.5-8: Define and maintain secure management processes for critical security parameters
+
+- *5.6*: Minimize exposed attack surfaces. Process requirements:
+  - 5.6-6: Minimize code to reduce the attack surface
+  - 5.6-7: Ensure software runs with the least necessary privileges
+  - 5.6-9: Implement secure development processes
+
+- *5.7*: Ensure software integrity
+
+- *5.8*: Ensure that personal data is secure
+
+- *5.9*: Make systems resilient to outages
+
+- *5.10*: Examine system telemetry data
+
+- *5.11*: Make it easy for users to delete user data
+
+- *5.12*: Make installation and maintenance of devices easy
+
+- *5.13*: Validate input data
+
+Even consolidated sets of process requirements, such as those from the ETSI EN 303 645 standard, are not fully mapped to threat models. Instead, they are fixed in their specification and lack flexibility depending on their application context. With the logical structure of ADs, it is possible to reveal hidden hierarchical structures and uncover links and references among individual requirements when modeling process requirements. In the context of ETSI EN 303 645, while the provisions already allow for grouping of requirements, it is likely that requirements from different provisions reference common themes. Additionally, some requirements may contain directives that are more precisely specified in other requirements. Utilizing the AD data structure helps highlight these connections and relationships among requirements, enabling a comprehensive understanding of the requirement set and facilitating better specification and organization.
+
+For instance, vulnerability management links to secure development practices and update processes, showing how multiple requirements reinforce each other to mitigate shared risks. To highlight these interconnections, we directly link ADs when necessary using the “@” notation.
+
+As a practical evaluation of the AD framework on the process requirements of ETSI EN 303 645, we searched the knowledge base of ADs based on real-world needs. The multiple ways of categorizing ADs allow us to perform this operation more precisely than with the grouping by provisions. For example, when searching for all requirements aimed at addressing vulnerabilities, using the tags field allows us to immediately identify the following requirements: 5.2-1, 5.2-2, 5.2-3, 5.3-8. We can observe that although grouping by provision maintains some degree of cohesion among requirements, some scattering may still occur when searching for high-level concepts. This extraction proves very helpful in situations where adopters of a standard are interested in gathering all relevant requirements about specific processes and procedures.
+
+
