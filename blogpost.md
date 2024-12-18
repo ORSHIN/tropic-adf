@@ -25,6 +25,7 @@ Imagine we are developing a new crypto wallet with the following requirements. T
 Before deploying it, it's essential to conduct a threat model exercise to identify and mitigate potential security and privacy risks. The ADF can help us achieve this.
 
 We evaluated the ADF by using it to TM *seven orthogonal threat domains* for the crypto wallet:
+- ETSI EN 303 645 Process Threats:  [etsi.yaml](https://github.com/francozappa/adf/blob/main/catalog/etsi.yaml).
 - Physical Side-Channel and Fault Injection Threats: [side-channel-phy.yaml](https://github.com/francozappa/adf/blob/main/catalog/side-channel-phy.yaml)
 - Micro architectural and Speculative Execution Threats:
   [microa.yaml](https://github.com/francozappa/adf/blob/main/catalog/microa.yaml)
@@ -38,7 +39,6 @@ We evaluated the ADF by using it to TM *seven orthogonal threat domains* for the
   [fido_system.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_solokey.yaml).
 - BLE Protocol and Implementation Threats:
   [bt.yaml](https://github.com/francozappa/adf/blob/main/catalog/fido_solokey.yaml).
- - ETSI EN 303 645 Process Threats:  [etsi.yaml](https://github.com/francozappa/adf/blob/main/catalog/etsi.yaml).
 
 
 ## BLE Protocol and Implementation Threats for the Cryptowallet
@@ -212,7 +212,7 @@ With the identified threats, mitigations, and defenses, a security expert has al
 **Mitigating BLESA**: The BLESA threat applies to a BLE Central devices, however, since our Crypto Wallet is a Peripheral, we can fix it by disabling Central capabilities in the BLE stack when compiling it.
 
 
-**ETSI EN 303 645 process threats
+** ETSI EN 303 645 process threats
 
 The ETSI EN 303 645 is a standard for the cybersecurity of IoT devices. It is a mix of technical requirements (e.g., "no default password") and procedures (e.g., “keep software updated”). The positive aspect of the standard is the pragmatic approach in defining tangible results that the IoT device manufacturer should reach and how they can be demonstrated.
 
@@ -222,41 +222,41 @@ We have developed 9 process ADs, each named according to the number and section 
 
 The standard is divided into the following high-level sections, where we highlight the process requirements we selected:
 
-- *5.1*: No universal default passwords
+- *5.1: No universal default passwords*.
 
-- *5.2*: Implement a means to manage reports of vulnerabilities. Process requirements:
+- *5.2: Implement a means to manage reports of vulnerabilities*. Process requirements:
   - 5.2-1: Define and publish a vulnerability disclosure policy
   - 5.2-2: Follow a documented vulnerability management process
   - 5.2-3: Maintain and monitor a Software Bill of Materials (SBOM)
 
-- *5.3*: Keep software updated. Process requirements:
+- *5.3: Keep software updated*. Process requirements:
   - 5.3-8: Ensure timely security updates
   - 5.3-13: Define and adhere to a support period for security updates
   - 5.3-14: Define hardware replacement support for constrained devices
 
-- *5.4*: Securely store sensitive security parameters
+- *5.4: Securely store sensitive security parameters*.
 
-- *5.5*: Communicate securely. Process requirement:
+- *5.5: Communicate securely*. Process requirement:
   - 5.5-8: Define and maintain secure management processes for critical security parameters
 
-- *5.6*: Minimize exposed attack surfaces. Process requirements:
+- *5.6: Minimize exposed attack surfaces*. Process requirements:
   - 5.6-6: Minimize code to reduce the attack surface
   - 5.6-7: Ensure software runs with the least necessary privileges
   - 5.6-9: Implement secure development processes
 
-- *5.7*: Ensure software integrity
+- *5.7: Ensure software integrity*.
 
-- *5.8*: Ensure that personal data is secure
+- *5.8: Ensure that personal data is secure*.
 
-- *5.9*: Make systems resilient to outages
+- *5.9: Make systems resilient to outages*.
 
-- *5.10*: Examine system telemetry data
+- *5.10: Examine system telemetry data*.
 
-- *5.11*: Make it easy for users to delete user data
+- *5.11: Make it easy for users to delete user data*.
 
-- *5.12*: Make installation and maintenance of devices easy
+- *5.12: Make installation and maintenance of devices easy*.
 
-- *5.13*: Validate input data
+- *5.13: Validate input data*.
 
 Even consolidated sets of process requirements, such as those from the ETSI EN 303 645 standard, are not fully mapped to threat models. Instead, they are fixed in their specification and lack flexibility depending on their application context. With the logical structure of ADs, it is possible to reveal hidden hierarchical structures and uncover links and references among individual requirements when modeling process requirements. In the context of ETSI EN 303 645, while the provisions already allow for grouping of requirements, it is likely that requirements from different provisions reference common themes. Additionally, some requirements may contain directives that are more precisely specified in other requirements. Utilizing the AD data structure helps highlight these connections and relationships among requirements, enabling a comprehensive understanding of the requirement set and facilitating better specification and organization.
 
