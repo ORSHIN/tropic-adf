@@ -27,7 +27,7 @@ Before deploying it, it's essential to conduct a threat model exercise to identi
 We evaluated the ADF by using it to TM *seven orthogonal threat domains* for the crypto wallet:
 - ETSI EN 303 645 Process Threats:  [etsi.yaml](https://github.com/francozappa/adf/blob/main/catalog/etsi.yaml).
 - Physical Side-Channel and Fault Injection Threats: [side-channel-phy.yaml](https://github.com/francozappa/adf/blob/main/catalog/side-channel-phy.yaml)
-- Micro architectural and Speculative Execution Threats:
+- Microarchitectural and Speculative Execution Threats:
   [microa.yaml](https://github.com/francozappa/adf/blob/main/catalog/microa.yaml)
 - Pre-silicon Testing Threats:
   [presil.yaml](https://github.com/francozappa/adf/blob/main/catalog/presil.yaml)
