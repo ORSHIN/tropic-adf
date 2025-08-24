@@ -2,20 +2,33 @@
 
 ## Introduction
 
-The AttackDefense Framework (ADF) is a threat modeling framework for IoT
-devices and life cycles.
+This repository is a fork of the original [AttackDefense Framework (ADF)](https://github.com/francozappa/adf) — a threat modeling framework for IoT devices and life cycles.
 
-In this [blog post](blogpost.md) we explain how we used the ADF to threat model a crypto
-wallet.
+The aim of this fork is to establish a relationship with the newly introduced [MITRE EMB3D™ Threat Model](https://emb3d.mitre.org/), which has some advantages over ADF, including faster modeling over a fixed structure of attack surfaces (EM3ED Device Properties).
 
-The repository has the following structure:
+On the other hand, the flexibility and easy-to-adopt approach of ADF make it possible to extend and enrich the MITRE EMB3D™ Threat Model by intermapping threats with a custom ADF database, allowing rapid and more precise threat modeling at the same time.
 
-* `yaml/` contains the AD files
+Additionally, we provide a comprehensive database of ADF files based on the list of AD objects created in the ORSHIN project as a starting point for detailed modeling of constrained CMOS devices, where the MITRE EM3ED is not very detailed.
+
+The ADF repository has the following structure:
+
+* `catalog/` contains the AD files
 * `analyze.py` automatically analyze ADs (maps, chains, trees, ...)
 * `check.py` check syntax and semantic of the ADs
 * `parse.py` parse ADs from other sources (CAPEC, ...)
 * `*_test.py` test scripts
 * `Makefile` run tests, scripts, etc
+
+This repository for has been extended by the following content compared to the original [AttackDefense Framework (ADF)](https://github.com/francozappa/adf) (see [Connecting AD Catalog with MITRE EM3ED](#connecting-ad-catalog-with-mitre-em3ed) for detailed description):
+
+* `catalog-mitre/` AD file catalog with content from `catalog` deduplicted and optimized for generic use in the area of constrained devices
+* `dict/` contains definition of the newly added AD dictionary: alowed phrases for `surf`, `vect`, `model`, and `tag`
+* `check_tool.py` check syntax and semantic of the ADs, extended by:
+  - the ability to compare two AD files and rank ability between ADs
+  - the ability to use ADF dictionaries
+  - the generate the ADF dictionary from the AD file
+* `mitre/` MITRE EM3ED-related resources
+* `visualization/` shows the MITRE EM3ED-ADF database relationship in the means of the hierarchicaly structured generated static web page
 
 
 ## ADF Research Paper (ACM TECS)
@@ -108,22 +121,108 @@ We involved seven expert groups covering orthogonal threat categories spanning
 hardware, software, firmware, security, privacy, and protocols.
 
 1. **Security Pattern** (lead: Gringiani) covered *ETSI EN 303 645 process threats*.
-   They produced 9 ADs in [etsi.yaml](yaml/etsi.yaml).
+   They produced 9 ADs in [etsi.yaml](catalog/etsi.yaml).
 2. **KUL COSIC** (lead: De Meulemeester) covered *side channel and
    fault injection threats*.
-   They produced 20 ADs in [sc-fi.yaml](yaml/sc-fi.yaml)
+   They produced 20 ADs in [side-channel-phy.yaml](catalog/side-channel-phy.yaml)
 3. **KUL DistriNet** (lead: Bognar) covered *microarchitectural and speculative execution threats*.
-   They produced 14 ADs in [microa.yaml](yaml/microa.yaml).
+   They produced 14 ADs in [microa.yaml](catalog/microa.yaml).
 4. **NXP Germany** (lead: Bezsmertnyi) covered *presilicon RISC-V secure element threats*.
-   They produced 8 ADs in [presil.yaml](yaml/presil.yaml).
+   They produced 8 ADs in [presil.yaml](catalog/presil.yaml).
 5. **Texplained** (lead: Thomas) covered *invasive physical IC threats*.
-   They produced 26 ADs in [physical.yaml](yaml/physical.yaml).
+   They produced 26 ADs in [physical.yaml](catalog/physical.yaml).
 6. **EURECOM** (lead: Sacchetti) covered *BLE protocol and implementation threats*.
-   They produced 46 ADs in [bt.yaml](yaml/bt.yaml).
+   They produced 46 ADs in [bt.yaml](catalog/bt.yaml).
 7. **Security Pattern** (lead: Gringiani) covered *FIDO2 authentication threats*.
-   They produced 21 ADs in [fido_device.yaml](yaml/fido_device.yaml),
-   [fido_solokey.yaml](yaml/fido_solokey.yaml), and
-   [fido_system.yaml](yaml/fido_system.yaml).
+   They produced 21 ADs in [fido_device.yaml](catalog/fido_device.yaml),
+   [fido_solokey.yaml](catalog/fido_solokey.yaml), and
+   [fido_system.yaml](catalog/fido_system.yaml).
+
+
+## Connecting AD Catalog with MITRE EM3ED
+
+### Generic AD Catalog for Constrained CMOS Devices
+
+An original [catalog/](catalog) created by the expert groups was reviewed, and slightly modified, and [catalog-mitre/](catalog-mitre) was created in following steps:
+  - removed deprecated files and examples
+  - created AD database files to closely reflect the MITRE EM3ED structure
+  - merged similar and overlaping AD objects
+  - to improve consistency, we used the **Title Case** style (in dictionaries, and through ADs as a consequence) for v`surf`, `vect`, `model`, and `tag` terms.
+
+The resulting AD database files were validated, the non-compliance with respect to YAML and ADF standards was fixed.
+
+Additionally, dictionaries in [dicts/](dicts) were created to simplify validation.
+[Dictionaries](dicts) contain allowed phrases, and the description of `surf`, `vect`, `model`, and `tag`. Additionally they allow linkage with MITRE by Threat IDs (TID) connected to top-level attack vectors, and MITRE Device Properties (PID) connected to main attack surfaces.
+The `check_tool.py` enforces, that at least one (the most top-level) AD's attack surface must be linked with MITRE TID.
+
+The resulting [catalog-mitre](catalog-mitre) contains deduplicated ADs interlinked with MITRE EM3ED by TIDs connected to top-level attack surface, and PIDs connected to top-level attack vectors allowing maping ADs to MITRE EM3ED threats and device properties.
+
+
+### AD Checker Tool Examples
+
+#### Creating Dictionary from AD File
+
+```bash
+python3 check_tool.py -i catalog-mitre/physical.yaml -g > dicts/physical.yaml
+```
+
+#### Validate the AD Dictionary
+
+```bash
+python3 check_tool.py -i dicts/physical.yaml
+```
+
+#### Validate the AD File
+
+To validate AD file syntax, run:
+```bash
+python3 check_tool.py -i catalog/fido_device.yaml
+ERR : AD format not compliant with schema!
+
+python3 check_tool.py -i catalog/fido_device.yaml -v
+DBG : Checking YAML syntax: catalog/fido_device.yaml
+DBG : check_yamllint: catalog/fido_device.yaml: passed
+ERR : AD format not compliant with schema!
+Key 'time_khandles' error:
+Key 'risk' error:
+<lambda>([]) should evaluate to True
+```
+
+To validate AD file syntax, and check the AD structure, use dictionary:
+```bash
+python3 check_tool.py -i catalog-mitre/physical.yaml -d dicts/physical.yaml
+```
+
+#### Compare the Content of Two AD files
+
+```bash
+python3 check_tool.py -i catalog-mitre/physical.yaml -c catalog/physical.yaml -d dicts/physical.yaml
+```
+
+### Generate ADF Vizualization and/or Threat Model
+
+The ADF Visualization uses Jekyll (a static site generator) to generate a structured view of the threat model.
+
+Ruby and Jekyll must be installed.
+
+On Debian-based distributions, typically run (tested on Ubuntu 24.04 LTS):
+
+```bash
+sudo apt install ruby ruby-dev gem
+sudo gem install jekyll
+```
+
+To generate a threat model, based on the MITRE EM3ED surfaces (PIDs), for a particular device:
+- go to the `visualization/_data`
+- modify all `model_*.yaml` files to reflect your device needs by removing or adding attack surfaces (PIDs) -  take [model_em3ed.yaml](visualization/_data/model_em3ed.yaml) as a reference
+
+Then execute:
+
+```bash
+make model
+```
+
+The static page representing a defined threat model is generated: open [visualization/_site/index.html](visualization/_site/index.html).
 
 
 ## Tests

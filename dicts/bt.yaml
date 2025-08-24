@@ -1,0 +1,389 @@
+---
+# NOTE: dictionary for the check.py tool
+
+surf:
+    A2MP:
+        alias: ["A2MP"]
+        description: "A2MP"
+        pid:
+
+    ACL:
+        alias: ["ACL"]
+        description: "ACL"
+
+    Android:
+        alias: ["Android"]
+        description: "Android"
+
+    Association:
+        alias: ["Association"]
+        description: "Association"
+
+    Authentication:
+        alias: ["Authentication"]
+        description: "Authentication"
+        note: "challenge response"
+
+    BC:
+        alias: ["BC"]
+        description: "BC"
+
+    BLE:
+        alias: ["BLE"]
+        description: "BLE"
+
+    BLE-Stack:
+        alias: ["BLE-Stack"]
+        description: "BLE-Stack"
+
+    BlueZ:
+        alias: ["BlueZ"]
+        description: "BlueZ"
+
+    BM:
+        alias: ["BM"]
+        description: "BM"
+
+    CTKD:
+        alias: ["CTKD"]
+        description: "CTKD"
+
+    Entropy negotiation:
+        alias: ["Entropy negotiation", "entropy-negotiation"]
+        description: "negotiation"
+
+    Feature exchange:
+        alias: ["Feature exchange", "Feature-exchange"]
+        description: "Feature exchange"
+
+    Flouride:
+        alias: ["Flouride"]
+        description: "Flouride"
+
+    GATT:
+        alias: ["GATT"]
+        description: "GATT"
+
+    HCI:
+        alias: ["HCI"]
+        description: "HCI"
+
+    iOS:
+        alias: ["iOS"]
+        description: "iOS"
+
+    Kernel:
+        alias: ["Kernel"]
+        description: "Kernel"
+
+    Key agreement:
+        alias: ["key agreement, key-agreement"]
+        description: "agreement"
+        noe: "Key exchange, ECDH, ad-hoc"
+
+    LEAP:
+        alias: ["LEAP"]
+        description: "LEAP"
+
+    Legacy pairing:
+        alias: ["Legacy pairing"]
+        description: "Legacy pairing"
+
+    Linux:
+        alias: ["Linux"]
+        description: "Linux"
+
+    LMP:
+        alias: ["LMP"]
+        description: "LMP"
+
+    MagicPairing:
+        alias: ["MagicPairing"]
+        description: "MagicPairing"
+
+    Pairing:
+        alias: ["Pairing"]
+        description: "Pairing"
+
+    Provisioning:
+        alias: ["Provisioning"]
+        description: "Provisioning"
+
+    Scanning:
+        alias: ["Scanning"]
+        description: "Scanning"
+
+    Session:
+        alias: ["Session"]
+        description: "Session"
+
+    Session establishment:
+        alias: ["Session establishment"]
+        description: "Session establishment"
+
+    SMP:
+        alias: ["SMP"]
+        description: "SMP"
+
+    TODO:
+        alias: ["TODO"]
+        description: "Not implemented yet"
+
+    Windows:
+        alias: ["Windows"]
+        description: "Windows"
+
+
+vect:
+    Authentication challenge reflection:
+        alias: ["Authentication challenge reflection"]
+        description: "Authentication challenge reflection"
+
+    Authentication role switch:
+        alias: ["Authentication role switch"]
+        description: "Authentication role switch"
+
+    Authentication skip:
+        alias: ["Authentication skip"]
+        description: "Authentication skip"
+
+    Brute force:
+        alias: ["Brute force"]
+        description: "Brute force"
+
+    Buffer overflow:
+        alias: ["Buffer overflow"]
+        description: "Buffer overflow"
+
+    Cross-transport pairing:
+        alias: ["Cross-transport pairing"]
+        description: "Cross-transport pairing"
+
+    DDoS:
+        alias: ["DDoS"]
+        description: "DDoS"
+
+    DoS:
+        alias: ["DoS"]
+        description: "DoS"
+
+    Eavesdropping:
+        alias: ["Eavesdropping"]
+        description: "Eavesdropping"
+
+    Encryption downgrade:
+        alias: ["Encryption downgrade"]
+        description: "Encryption downgrade"
+
+    Entropy downgrade:
+        alias: ["Entropy downgrade"]
+        description: "Entropy downgrade"
+
+    Heap overflow:
+        alias: ["Heap overflow"]
+        description: "Heap overflow"
+
+    Information leak:
+        alias: ["Information leak"]
+        description: "Information leak"
+
+    Invalid ECC point:
+        alias: ["Invalid ECC point"]
+        description: "Invalid ECC point"
+
+    Kernel panic:
+        alias: ["Kernel panic"]
+        description: "Kernel panic"
+
+    Key brute force:
+        alias: ["Key brute force"]
+        description: "Key brute force"
+
+    MitM:
+        alias: ["MitM"]
+        description: "MitM"
+
+    No IO downgrade:
+        alias: ["No IO downgrade"]
+        description: "No IO downgrade"
+
+    Pointer corruption:
+        alias: ["Pointer corruption"]
+        description: "Pointer corruption"
+
+    Pointer dereference:
+        alias: ["Pointer dereference"]
+        description: "Pointer dereference"
+
+    RCE:
+        alias: ["RCE"]
+        description: "RCE"
+
+    Relay:
+        alias: ["Relay"]
+        description: "Relay"
+
+    Replay:
+        alias: ["Replay"]
+        description: "Replay"
+
+    RID:
+        alias: ["RID"]
+        description: "RID"
+
+    SC downgrade:
+        alias: ["SC downgrade"]
+        description: "SC downgrade"
+
+    TODO:
+        alias: ["TODO"]
+        description: "TODO"
+
+    Tracking:
+        alias: ["Tracking"]
+        description: "Tracking"
+
+
+model:
+    CloseProximity:
+        alias: ["CloseProximity"]
+        description: "CloseProximity"
+
+    Downgrade:
+        alias: ["Downgrade"]
+        description: "Downgrade"
+
+    Eavesdropper:
+        alias: ["Eavesdropper"]
+        description: "Eavesdropper"
+
+    Fingerprinting:
+        alias: ["Fingerprinting"]
+        description: "Fingerprinting"
+
+    Hijacking:
+        alias: ["Hijacking"]
+        description: "Hijacking"
+
+    Impersonation:
+        alias: ["Impersonation"]
+        description: "Impersonation"
+
+    MitM:
+        alias: ["MitM"]
+        description: "MitM"
+
+    Physical:
+        alias: ["Physical"]
+        description: "Physical"
+
+    Proximity:
+        alias: ["Proximity"]
+        description: "Proximity"
+
+    Remote:
+        alias: ["Remote"]
+        description: "Remote"
+
+    Spoofing:
+        alias: ["Spoofing"]
+        description: "Spoofing"
+
+    Unintended session:
+        alias: ["Unintended session"]
+        description: "Unintended session"
+
+    Zero-Click:
+        alias: ["Zero-Click"]
+        description: "Zero-Click"
+
+
+tag:
+
+    ACL:
+        alias: ["ACL"]
+        description: "ACL"
+
+    BLELL:
+        alias: ["BLELL"]
+        description: "BLELL"
+
+    BMP:
+        alias: ["BMP"]
+        description: "BMP"
+
+    BNEP:
+        alias: ["BNEP"]
+        description: "BNEP"
+
+    Confidentiality:
+        alias: ["Confidentiality"]
+        description: "Confidentiality"
+
+    dual-mode:
+        alias: ["dual-mode"]
+        description: "dual-mode"
+
+    Fuzz:
+        alias: ["Fuzz"]
+        description: "Fuzz"
+
+    ID:
+        alias: ["ID"]
+        description: "ID"
+
+    Impl:
+        alias: ["Impl"]
+        description: "Impl"
+
+    L2CAP:
+        alias: ["L2CAP"]
+        description: "L2CAP"
+
+    LELSC:
+        alias: ["LELSC"]
+        description: "LELSC"
+
+    LESC:
+        alias: ["LESC"]
+        description: "LESC"
+
+    LSC:
+        alias: ["LSC"]
+        description: "LSC"
+
+    PAN:
+        alias: ["PAN"]
+        description: "PAN"
+
+    Privacy:
+        alias: ["Privacy"]
+        description: "Privacy"
+
+    Probabilistic:
+        alias: ["Probabilistic"]
+        description: "Probabilistic"
+
+    Protocol:
+        alias: ["Protocol"]
+        description: "Protocol"
+
+    SC:
+        alias: ["SC"]
+        description: "SC"
+
+    SCO:
+        alias: ["SCO"]
+        description: "SCO"
+
+    SDP:
+        alias: ["SDP"]
+        description: "SDP"
+
+    SSP:
+        alias: ["SSP"]
+        description: "SSP"
+
+    TODO:
+        alias: ["TODO"]
+        description: "Not implemented yet"
