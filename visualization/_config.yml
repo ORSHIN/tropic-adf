@@ -49,6 +49,20 @@ page_gen:
   name_expr: "key"
   title_expr: "record['a']"
   degug: true
+- data: 'ad.fido'
+  template: 'ad_fido'
+  dir: 'ad_fido'
+  index_files: false
+  name_expr: "key"
+  title_expr: "record['a']"
+  degug: true
+- data: 'ad.bt'
+  template: 'ad_bt'
+  dir: 'ad_bt'
+  index_files: false
+  name_expr: "key"
+  title_expr: "record['a']"
+  degug: true
 
 
 # Exclude from processing.

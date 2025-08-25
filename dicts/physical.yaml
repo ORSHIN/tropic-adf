@@ -48,9 +48,9 @@ surf:
         alias: ["RSA Exponentiation"]
         description: "Key-dependent exponentiation leads to single-trace key extraction through measuring power consumption"
         pid: 11  # Device includes a microprocessor -> device contains logic
-    private key:
-        alias: ["Private Key"]
-        description: "private key"
+    Private Key:
+        alias: ["private key"]
+        description: "Device contains memory, where sensitive data are stored"
         pid: 12  # Device contains memory, where sensitive data are stored
     ECC:
         alias: ["Elliptic-Curve Cryptography"]
