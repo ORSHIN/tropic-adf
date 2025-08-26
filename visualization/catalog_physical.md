@@ -3,20 +3,24 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
+custom_js:
+  - sortable.min.js
 ---
 
-# Bluetooth Threat Model
+# Physical Threat Catalog
 
+<table id="threatCatalog" data-sortable>
+<thead><tr><th>Attack Vector and Threat</th><th>Primary MITRE EM3ED TID</th><th>Risk Value</th></tr></thead>
 
 {% comment %} <!-- BEGIN Iterate Defined Surfaces --> {% endcomment %}
 {% for surface in site.data.model_bt %}
 
 
 {% comment %} <!-- BEGIN Settings --> {% endcomment %}
-{% assign DICTIONARY_SURF = site.data.dicts.bt.surf %}
-{% assign DICTIONARY_VECT = site.data.dicts.bt.vect %}
-{% assign DATABASE_AD = site.data.ad.bt %}
-{% assign DIR_AD = "ad_bt" %}  {% comment %} <!-- Directory where generated AD pages are stored --> {% endcomment %}
+{% assign DICTIONARY_SURF = site.data.dicts.physical.surf %}
+{% assign DICTIONARY_VECT = site.data.dicts.physical.vect %}
+{% assign DATABASE_AD = site.data.ad.physical %}
+{% assign DIR_AD = "ad_physical" %}  {% comment %} <!-- Directory where generated AD pages are stored --> {% endcomment %}
 {% assign DISPLAY_ALL_ADS =  false %}  {% comment %} <!-- Display all relations between ADs and surfaces --> {% endcomment %}
 {% assign MITRE_PID = surface[1].pid %}
 {% assign MITRE_PIDS = "PID-" | append: surface[1].pid %}
@@ -24,8 +28,9 @@ layout: default
 {% comment %} <!-- END Settings --> {% endcomment %}
 
 
-{% include display_surfaces.md %}
+{% include display_catalog.md %}
 
 {% endfor %}
 {% comment %} <!-- END Iterate Defined Surfaces --> {% endcomment %}
 
+</table>

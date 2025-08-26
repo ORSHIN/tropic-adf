@@ -647,4 +647,19 @@ table td {
   color: #099;
 }
 
+/* Risk severity colors */
+.risk_severity_none {
+  background-color: white;
+}
+.risk_severity_low {
+  background-color: green;
+}
+.risk_severity_medium {
+  background-color: orange;
+}
+.risk_severity_high {
+  background-color: red;
+}
+
 /*# sourceMappingURL=main.css.map */
+

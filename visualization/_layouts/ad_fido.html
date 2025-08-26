@@ -8,6 +8,11 @@ layout: default
 {{ page.a }}
 
 
+{% if page.risk %}
+<br /><br />
+Risk Assesment: {{ page.risk }}
+{% endif %}
+
 <h2>CWE</h2>
 {% for cwe in page.cwe %}
 
@@ -19,7 +24,7 @@ layout: default
 
 {% for cve in page.cve %}
 
-<p><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name={{ cve }}">{{ cve }}</a></p>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-{{ page.year }}-{{ cve }}">{{ cve }}</a></p>
 
 {% endfor %}
 
@@ -41,15 +46,13 @@ layout: default
 <h2>Attack Vectors</h2>
 
 {% for vect_obj in site.data.dicts.fido.vect %}
-{% if vect_obj[1].tid %}
 
 {% for ad_vect in page.vect %}
 {% if vect_obj[0] contains ad_vect or vect_obj[1].alias contains ad_vect %}
-<p> {{ vect_obj[0] }} (<a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a>) </p>
+<p> {{ vect_obj[0] }} {% if vect_obj[1].tid %} (<a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a>) {% endif %} </p>
 {% endif %}
 {% endfor %}
 
-{% endif %}
 {% endfor %}
 
 

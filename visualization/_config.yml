@@ -33,6 +33,9 @@ theme: minima
 #  - jekyll-datapage-generator
 #  - jekyll-feed
 
+# custom_js:
+#   - sortable.min.js
+
 page_gen-dirs: true
 page_gen:
 - data: 'ad.physical'

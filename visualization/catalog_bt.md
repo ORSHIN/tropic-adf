@@ -3,10 +3,14 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
+custom_js:
+  - sortable.min.js
 ---
 
-# Bluetooth Threat Model
+# Bluetooth Threat Catalog
 
+<table id="threatCatalog" data-sortable>
+<thead><tr><th>Attack Vector and Threat</th><th>Primary MITRE EM3ED TID</th><th>Risk Value</th></tr></thead>
 
 {% comment %} <!-- BEGIN Iterate Defined Surfaces --> {% endcomment %}
 {% for surface in site.data.model_bt %}
@@ -24,8 +28,9 @@ layout: default
 {% comment %} <!-- END Settings --> {% endcomment %}
 
 
-{% include display_surfaces.md %}
+{% include display_catalog.md %}
 
 {% endfor %}
 {% comment %} <!-- END Iterate Defined Surfaces --> {% endcomment %}
 
+</table>
