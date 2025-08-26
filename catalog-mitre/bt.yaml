@@ -233,7 +233,7 @@ blueborne_bc_1:
     Check L2CAP config option output buffer length:
       [Validate output buffer length for L2CAP config requests and responses]
   year: 2017
-  surf: [BC, Linux, Kernel, BlueZ]
+  surf: [Linux, Kernel, BC, BlueZ]
   vect: [RCE]
   model: [Proximity, Zero-Click]
   tag: [L2CAP]
@@ -353,7 +353,7 @@ bluefrag_bc:
     Correct size computation before write operations:
       [Correct the continuous packet length in L2CAP reassembly logic]
   year: 2020
-  surf: [BC, Android, Flouride, ACL]
+  surf: [BC, Android, Flouride]
   vect: [DoS, RCE]
   model: [Proximity, Zero-Click]
   tag: [Impl, Fuzz, L2CAP]
@@ -546,7 +546,7 @@ toothpicker:
   d:
     Sanitize received protocol values: [Check received protocol opcode value]
   year: 2020
-  surf: [BC, iOS, MagicPairing, ACL]
+  surf: [BC, iOS, MagicPairing]
   vect: [RCE, DoS]
   model: [Proximity, Zero-Click]
   tag: [Impl, Fuzz, L2CAP]

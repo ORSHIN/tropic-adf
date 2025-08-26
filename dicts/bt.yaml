@@ -54,7 +54,7 @@ surf:
         description: "LMP"
     CTKD:
         alias: ["CTKD"]
-        description: "CTKD"
+        description: "Cross-Transport Key Derivation"
     Legacy pairing:
         alias: ["Legacy pairing"]
         description: "Legacy pairing"
@@ -66,7 +66,7 @@ surf:
         description: "Association"
     Bond Management:
         alias: ["BM"]
-        description: "BM"
+        description: "Bond Management"
         pid: 4113
     Provisioning:
         alias: ["Provisioning"]
@@ -89,12 +89,6 @@ surf:
     Scanning:
         alias: ["Scanning"]
         description: "Scanning"
-    ACL:
-        alias: ["ACL"]
-        description: "ACL"
-    Feature Exchange:
-        alias: ["Feature Exchange"]
-        description: "Feature Exchange"
     MagicPairing:
         alias: ["MagicPairing"]
         description: "MagicPairing"
@@ -110,7 +104,7 @@ surf:
 
 vect:
     Applications Binaries Modified:
-        alias: [""]
+        alias: ["AppMod"]
         description: "Applications Binaries Modified"
         tid: 301
     Entropy downgrade:
@@ -155,7 +149,7 @@ vect:
         alias: ["RID"]
         description: "Remote Identifier"
         tid: 327
-    Information leak:
+    Information Leak:
         alias: ["Information leak"]
         description: "Information leak"
         tid: 310
@@ -223,9 +217,6 @@ tag:
     LESC:
         alias: ["LESC"]
         description: "LESC"
-    LELSC:
-        alias: ["LELSC"]
-        description: "LELSC"
     SSP:
         alias: ["SSP"]
         description: "SSP"

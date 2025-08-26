@@ -38,26 +38,10 @@ surf:
         alias: ["Non-Volatile Memory"]
         description: "Device includes memory/storage external to CPU"
         pid: 12
-    RSA:
-        alias: ["Rivest–Shamir–Adleman"]
-        description: "Rivest–Shamir–Adleman (RSA) algorithm"
-        pid: 11  # Device includes a microprocessor -> device contains logic
-    RSA Exponentiation:
-        alias: ["RSA Exponentiation"]
-        description: "Key-dependent exponentiation leads to single-trace key extraction through measuring power consumption"
-        pid: 11  # Device includes a microprocessor -> device contains logic
     private key:
         alias: ["Private Key", "Key Handle"]
         description: "private key"
         pid: 12  # Device contains memory, where sensitive data are stored
-    ECC:
-        alias: ["Elliptic-Curve Cryptography"]
-        description: "Elliptic-curve cryptography (ECC)"
-        pid: 11  # Device includes a microprocessor -> device contains logic
-    ECC Multiplication:
-        alias: ["ECC Multiplication"]
-        description: "Key-dependent multiplication leads to key extraction through measuring power consumption"
-        pid: 11  # Device includes a microprocessor -> device contains logic
     Speculation:
         alias: ["Speculative HW"]
         description: "Optimizations leading to speculative execution in the hardware"
@@ -74,10 +58,6 @@ surf:
         alias: [Authenticated, Authentication, Auth Metadata]
         description: "Device includes authenticated services"
         pid: 332
-    Password Authentication:
-        alias: [Password]
-        description: "Device includes passwords to authenticate the users"
-        pid: 3321
     Authenticated Sessions:
         alias: [Secure Session]
         description: "Device includes cryptographic mechanism to authenticate users and sessions"
@@ -102,29 +82,10 @@ vect:
         alias: []
         description: "Bus tampering"
         tid: 106
-    SCA:
-        alias: ["Side-Channel Attack"]
-        description: "Side-Channel Attack"
-    SPA:
-        alias: ["Simple-power analysis"]
-        description: "Simple-power Analysis Attack"
-    Power Side-Channel:
-        alias: ["Power Side-Channel", "Power Side-Channel Attack"]
-        description: "Power Side-Channel Attack"
-        tid: 101
     Electromagnetic Side-Channel:
         alias: ["Electromagnetic Fault Injection", "Electromagnetic Side-Channel Attack", "Electromagnetic analysis"]
         description: "Electromagnetic Side-Channel"
         tid: 102
-    DPA:
-        alias: ["Differential Power analysis", "Differential Power Analysis Attack"]
-        description: "Differential Power analysis"
-    DFA:
-        alias: ["Differential Fault analysis", "Differential Fault Analysis Attack"]
-        description: "Differential Fault analysis"
-    CPA:
-        alias: ["Correlation Power Analysis", "Correlation Power Analysis Attack"]
-        description: "Correlation Power Analysis"
     FA:
         alias: ["Fault Attack", "Fault Injection", "Fault Injection Attack"]
         description: "Fault Attack"
@@ -132,16 +93,7 @@ vect:
     FIB:
         alias: ["FIB Editing"]
         description: "FIB allows attackers to expose internal chip structures or reroute signals for invasive tampering like micro-probing"
-        tid: 999    # 999 as checker now needs some
-    Voltage Glitching:
-        alias: ["Voltage Glitching Attack"]
-        description: "Voltage glitching can cause circuit missbehaviour, and disclose sensitive data"
-    Clock Glitching:
-        alias: ["Clock Glitching Attack"]
-        description: "Clock glitching can cause circuit missbehaviour, and disclose sensitive data"
-    Laser Attack:
-        alias: ["Laser", "Laser Fault Injection", "Illumination", "Illumination Attack"]
-        description: "Laser Fault Injection Attack"
+        tid: 105
     Timing Side-Channel:
         alias: ["Timing Attack"]
         description: "Timing Side-Channel Attack"
@@ -149,35 +101,10 @@ vect:
     Firmware Execution:
         alias: ["Firmware", "Instruction Skip", "Control Flow Modification"]
         description: "Adversary cause firmware missbehaviour"
-    Communication Tampering:
-        alias: ["Communication", "Signal Injection"]
-        description: "Injection of invalid transaction, or data altering"
-    Speculative Execution:
-        alias: ["PHT", "BTB", "RSB"]
-        description: "Controlling a shared resource leading to the covert channel and/or poisoning the PHT (Pattern History Table) poisoning the BTB (Branch Target Buffer) or RSB (Return Stack Buffer)"
-        tid: 103
     ROM Extraction:
         alias: ["ROM/NVRAM Data Extraction or Modification"]
         description: "Contents of non-volatile memory can be directly read out for examination or modification."
         tid: 108
-    UV Illumination:
-        alias: []
-        description: "A UV illumination attack exploits the fact that ultraviolet (UV) light can temporarily alter the state of charge-storing elements in an integrated circuit."
-    Reverse Engineering:
-        alias: ["Reverse-Engineering"]
-        description: "Reverse engineering is the process of analyzing a physical device to uncover its internal structure, logic, or data."
-    SEM:
-        alias: ["Scanning Electron Microscope"]
-        description: "IC internal structure can be read with electron microscope"
-        tid: 102
-    Privileged Access Port:
-        alias: ["JTAG Privileged Port"]
-        description: "Latent user access port may be used to leverage physical access to obtain privileges that were not accounted for when considering software or remote access controls."
-        tid: 116
-    HW Debug Memory Code Manipulation:
-        alias: ["JTAG Manipulation"]
-        description: "Latent Hardware Debug Port Allows Memory/Code Manipulation"
-        tid: 119
     Firmware Rollback:
         alias: [Rollback, Downgrade]
         description: "Firmware Update Rollbacks Allowed"
@@ -228,9 +155,6 @@ model:
     Supply Chain:
         alias: ["Supply Chain"]
         description: "Supply Chain"
-    Phishing:
-        alias: ["Phishing"]
-        description: "Phishing"
     MiTM:
         alias: ["MiTM"]
         description: "Man-in-the-middle"

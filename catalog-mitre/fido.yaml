@@ -20,7 +20,7 @@ time_khandles:  # child of auth_sca
         Limit AllowCredential List Size
       ]
   year: 2022
-  surf: [Cryptographic Operation, Key Handle, Authentication]     # Authenticator, Client, Key Handle, AllowCredential]
+  surf: [Cryptographic Operation, Key Handle, Authentication]
   vect: [Timing Attack]
   model: [Remote]
   tag: [Linking]
@@ -128,7 +128,7 @@ sca_i2c:
         Insource MAC Hash Computation to the Microcontroller
       ]
   year: 2020
-  surf: [Debug Interface, Microcontroller, Firmware, Secure Session]
+  surf: [Debug Interface, Bus Interface, Microcontroller, Firmware, Secure Session]
   vect: [Insecure Impl, Firmware]
   model: [Physical, Evil Maid, Supply Chain]
   tag: [NitroKey, NitroKey FIDO U2F, I2C, EFM8UB, ATECC508A]
@@ -163,7 +163,7 @@ sca_deb:
 
 # SOLOKEY AD
 
-sca_sk_microecc:  # related to auth_sca
+sca_sk_microecc:
   a: ECC Key Extraction via Timing Attack
   d:
     Protection against SCA in micro-ecc Library:
@@ -183,7 +183,7 @@ sca_sk_microecc:  # related to auth_sca
 
 # https://eprint.iacr.org/2021/640.pdf
 
-sca_sk_fi:  # related to auth_sca
+sca_sk_fi:
   a: Master Key Extraction via Fault Injection Attack
   d:
     Protection against Flawed Read-out Protection:
@@ -205,7 +205,7 @@ sca_sk_fi:  # related to auth_sca
 
 # https://eprint.iacr.org/2021/640.pdf
 
-sk_down:  # related to auth_sca
+sk_down:
   a: Firmware Downgrade Attack
   d:
     Eliminate the Possibility to Upload the Firmare in Unordered Chuncks:
@@ -224,7 +224,7 @@ sk_down:  # related to auth_sca
 
   # https://solokeys.com/blogs/news/security-analysis-of-the-solo-firmware-by-doyensec
 
-sca_sk_emfi:  # related to auth_sca
+sca_sk_emfi:
   a: EMFI Attack against USB STACK
   d:
     Protection against Read Past End of Buffer Attacks:
