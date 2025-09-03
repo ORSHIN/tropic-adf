@@ -15,7 +15,7 @@ knob:
   cve: ["9506"]
   cwe: ["310", "327"]
   capec: ["668"]
-  risk: 8.1
+  risk: [8.1]
 
 bias_sc:
   a: Secure Connection Attack
@@ -37,7 +37,7 @@ bias_sc:
   cve: ["10135"]
   cwe: ["290", "757"]
   capec: ["667"]
-  risk: 5.4
+  risk: [5.4]
 
 blur:
   a: Bluetooth Cross-Transport Key Derivation (BLUR)
@@ -54,7 +54,7 @@ blur:
   tag: [Protocol, LESC, SSP, SC, dual-mode]
   cve: ["15802", "20361"]
   cwe: ["287"]
-  risk: 9.8
+  risk: [9.8]
 
 blacktooth:
   a: Profile switch
@@ -105,7 +105,7 @@ bluemirror_bc_1:
   tag: [Protocol, LMP, SSP, LSC]
   cve: ["26555"]
   cwe: ["863"]
-  risk: 5.4
+  risk: [5.4]
 
 bluemirror_bc_2:
   a: Passkey entry impersonation attack
@@ -121,7 +121,7 @@ bluemirror_bc_2:
   tag: [Protocol, LMP, SSP, SC]
   cve: ["26558"]
   cwe: ["287"]
-  risk: 4.2
+  risk: [4.2]
 
 bluemirror_ble:
   a: Reflection attack on passkey entry
@@ -137,7 +137,7 @@ bluemirror_ble:
   tag: [Protocol, LESC]
   cve: ["26558"]
   cwe: ["287"]
-  risk: 4.2
+  risk: [4.2]
 
 bluemirror_bm_1:
   a: MitM and auth reflection on BMP (M-A1)
@@ -153,7 +153,7 @@ bluemirror_bm_1:
   tag: [Protocol, BMP]
   cve: ["26560"]
   cwe: ["863"]
-  risk: 8.1
+  risk: [8.1]
 
 bluemirror_bm_2:
   a: Predictable or brute forceable AuthValue in BM Provisioning (M-A2)
@@ -169,7 +169,7 @@ bluemirror_bm_2:
   tag: [Protocol, BMP]
   cve: ["26557"]
   cwe: ["287"]
-  risk: 7.5
+  risk: [7.5]
 
 
 crackle_ble:
@@ -193,7 +193,7 @@ invcurve:
   tag: [Protocol, LMP, SSP, SC, LESC, Probabilistic]
   cve: ["5383"]
   cwe: ["347", "325"]
-  risk: 6.8
+  risk: [6.8]
 
 blesa_ble:
   a: BLE reconnection spoofing
@@ -206,7 +206,7 @@ blesa_ble:
   tag: [Protocol, Impl, BLELL]
   cve: ["9770"]
   cwe: ["326"]
-  risk: 6.5
+  risk: [6.5]
 
 nino_bc:
   a: MitM on Secure Simple Pairing
@@ -246,7 +246,7 @@ blueborne_bc_1:
   tag: [L2CAP]
   cve: ["1000251"]
   cwe: ["787"]
-  risk: 8.0
+  risk: [8.0]
 
 blueborne_bc_2:
   a: Information disclosure due to out-of-bounds heap read
@@ -259,7 +259,7 @@ blueborne_bc_2:
   tag: [SDP]
   cve: ["1000250"]
   cwe: ["200"]
-  risk: 6.5
+  risk: [6.5]
 
 blueborne_bc_3:
   a: Remote code execution
@@ -275,7 +275,7 @@ blueborne_bc_3:
   cve: ["0781", "0782"]
   cwe: ["119", "120"]
   vref: ["A-63146105", "A-63146237"]
-  risk: 8.2
+  risk: [8.2]
 
 blueborne_bc_4:
   a: Information disclosure
@@ -293,7 +293,7 @@ blueborne_bc_4:
   cve: ["0783"]
   cwe: ["200"]
   vref: ["A-63145701"]
-  risk: 8.2
+  risk: [8.2]
 
 blueborne_bc_5:
   a: Heap overflow
@@ -306,7 +306,7 @@ blueborne_bc_5:
   tag: [Impl]
   cve: ["14315"]
   cwe: ["119"]
-  risk: 7.5
+  risk: [7.5]
 
 bleedingbit_ble_1:
   a: Malformed packet buffer overflow in BLE beacons parsing
@@ -319,7 +319,7 @@ bleedingbit_ble_1:
   tag: [Impl]
   cve: ["16986"]
   cwe: ["119"]
-  risk: 9.8
+  risk: [9.8]
 
 frankenstein_bc_1:
   a: Inquiry Response Heap Overflow
@@ -359,7 +359,7 @@ frankenstein_bc_2:
   tag: [Impl, Fuzz, ACL, SCO]
   cve: ["18614"]
   cwe: ["787"]
-  risk: 7.8
+  risk: [7.8]
 
 bluefrag_bc:
   a: Out of bounds write in L2CAP reassembly
@@ -374,7 +374,7 @@ bluefrag_bc:
   cve: ["0022"]
   cwe: ["787"]
   vref: ["A-143894715"]
-  risk: 8.2
+  risk: [8.2]
 
 sweyntooth_ble_1:
   a: Link Layer Length Overflow
@@ -387,7 +387,7 @@ sweyntooth_ble_1:
   tag: [Impl, Fuzz]
   cve: ["16336", "17519"]
   cwe: ["120"]
-  risk: 7.4
+  risk: [7.4]
 
 sweyntooth_ble_2:
   a: Link Layer LLID Deadlock
@@ -400,7 +400,7 @@ sweyntooth_ble_2:
   tag: [Impl, Fuzz]
   cve: ["17060", "17061"]
   cwe: ["120"]
-  risk: 7.4
+  risk: [7.4]
 
 
 sweyntooth_ble_3:
@@ -414,7 +414,7 @@ sweyntooth_ble_3:
   tag: [Impl, Fuzz]
   cve: ["17518"]
   cwe: ["120"]
-  risk: 6.5
+  risk: [6.5]
 
 sweyntooth_ble_4:
   a: Key Size Overflow
@@ -427,7 +427,7 @@ sweyntooth_ble_4:
   tag: [Impl, Fuzz]
   cve: ["19196"]
   cwe: ["120"]
-  risk: 6.5
+  risk: [6.5]
 
 sweyntooth_ble_5:
   a: Zero LTK Installation
@@ -439,7 +439,7 @@ sweyntooth_ble_5:
   model: [Proximity, Zero-Click]
   tag: [Impl, Fuzz, SC]
   cve: ["19194"]
-  risk: 8.8
+  risk: [8.8]
 
 braktooth_bc_1:
   a: Messages Flooding
@@ -451,7 +451,7 @@ braktooth_bc_1:
   model: [Proximity]
   tag: [Impl, Fuzz, LMP]
   cve: ["28135", "28155", "31717", "31785", "31610", "34149", "34146", "34143", "20023"]
-  risk: 6.5
+  risk: [6.5]
 
 braktooth_bc_2:
   a: Truncated SCO Link Request
@@ -463,7 +463,7 @@ braktooth_bc_2:
   model: [Proximity]
   tag: [Impl, Fuzz, LMP]
   cve: ["34144"]
-  risk: 6.5
+  risk: [6.5]
 
 braktooth_bc_3:
   a: Feature Pages Execution
@@ -475,7 +475,7 @@ braktooth_bc_3:
   model: [Proximity]
   tag: [Impl, Fuzz, LMP]
   cve: ["28139"]
-  risk: 8.8
+  risk: [8.8]
 
 braktooth_bc_4:
   a: Duplicated IOCAP
@@ -487,7 +487,7 @@ braktooth_bc_4:
   model: [Proximity]
   tag: [Impl, Fuzz, LMP]
   cve: ["28136"]
-  risk: 4.9
+  risk: [4.9]
 
 braktooth_bc_5:
   a: LMP Overflow
@@ -499,7 +499,7 @@ braktooth_bc_5:
   model: [Proximity]
   tag: [Impl, Fuzz, Baseband]
   cve: ["31609", "31612", "35093", "34150"]
-  risk: 6.5
+  risk: [6.5]
 
 braktooth_bc_8:
   a: Accept Truncated LMP
@@ -511,7 +511,7 @@ braktooth_bc_8:
   model: [Proximity]
   tag: [Impl, Fuzz, LMP]
   cve: ["31613"]
-  risk: 6.5
+  risk: [6.5]
 
 braktooth_bc_9:
   a: Invalid Setup Complete
@@ -523,7 +523,7 @@ braktooth_bc_9:
   model: [Proximity]
   tag: [Impl, Fuzz, LMP]
   cve: ["31611"]
-  risk: 5.7
+  risk: [5.7]
 
 braktooth_bc_11:
   a: Same Host Connection
@@ -535,7 +535,7 @@ braktooth_bc_11:
   model: [Proximity]
   tag: [Impl, Fuzz, LMP]
   cve: ["31786", "20022"]
-  risk: 6.5
+  risk: [6.5]
 
 braktooth_bc_13:
   a: Invalid Max Slot Type or Length
@@ -547,7 +547,7 @@ braktooth_bc_13:
   model: [Proximity]
   tag: [Impl, Fuzz, Baseband]
   cve: ["34145", "34148"]
-  risk: 6.5
+  risk: [6.5]
 
 braktooth_bc_15:
   a: Invalid Timing Accuracy
@@ -559,7 +559,7 @@ braktooth_bc_15:
   model: [Proximity]
   tag: [Impl, Fuzz, LMP, Baseband]
   cve: ["34147", "30348", "33139"]
-  risk: 6.5
+  risk: [6.5]
 
 braktooth_bc_16:
   a: Paging Scan Deadlock
@@ -571,7 +571,7 @@ braktooth_bc_16:
   model: [Proximity]
   tag: [Impl, Fuzz, LMP, Baseband]
   cve: ["34147", "30348", "33139"]
-  risk: 6.5
+  risk: [6.5]
 
 toothpicker:
   a: SMP reception handler out-of-bounds read
@@ -584,7 +584,7 @@ toothpicker:
   tag: [Impl, Fuzz, L2CAP]
   cve: ["9839", "9931"]
   cwe: ["125"]
-  risk: 7.5
+  risk: [7.5]
 
 badvibes_bc:
   a: Heap-Based buffer overflow
@@ -597,7 +597,7 @@ badvibes_bc:
   tag: [Impl]
   cve: ["24490"]
   cwe: ["119"]
-  risk: 6.5
+  risk: [6.5]
 
 badkarma_bc:
   a: Heap-Based type confusion
@@ -610,7 +610,7 @@ badkarma_bc:
   tag: [Impl]
   cve: ["12351"]
   cwe: ["20"]
-  risk: 8.8
+  risk: [8.8]
 
 badchoice_bc:
   a: Stack-Based information leak
@@ -624,7 +624,7 @@ badchoice_bc:
   tag: [Impl]
   cve: ["12352"]
   cwe: ["909"]
-  risk: 6.5
+  risk: [6.5]
 # }}}
 
 pairing_method_confusion_ble:
@@ -640,7 +640,7 @@ pairing_method_confusion_ble:
   tag: [Protocol]
   cve: ["10134"]
   cwe: ["351", "436"]
-  risk: 6.3
+  risk: [6.3]
 
 # INFO: BLE encryption avoids MitM but allows for DoSsing the connection
 injectable:
@@ -654,7 +654,7 @@ injectable:
   tag: [Protocol]
   cve: ["31615"]
   cwe: ["362"]
-  risk: 5.3
+  risk: [5.3]
 
 gatt_fp_ble:
   a: GATT Fingerprinting and Tracking
