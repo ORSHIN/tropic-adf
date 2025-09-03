@@ -43,20 +43,22 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Prepare Build Directory
+        run: cp -aL ./visualization/ ./visualization_build/
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         # run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./visualization/
-          destination: ./visualization/_site
+          source: ./visualization_build/
+          destination: ./visualization_build/_site
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./visualization/_site
+          path: ./visualization_build/_site
 
   # Deployment job
   deploy:
