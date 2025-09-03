@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository is a fork of the original [AttackDefense Framework (ADF)](https://github.com/francozappa/adf) — a threat modeling framework for IoT devices and life cycles.
+This repository is a fork of the original [AttackDefense Framework (ADF)](https://github.com/francozappa/adf) — a threat-modeling framework for IoT devices and lifecycles.
 
 The aim of this fork is to establish a relationship with the newly introduced [MITRE EMB3D™ Threat Model](https://emb3d.mitre.org/), which has some advantages over ADF, including faster modeling over a fixed structure of attack surfaces (EM3ED Device Properties).
 
@@ -13,22 +13,22 @@ Additionally, we provide a comprehensive database of ADF files based on the list
 The ADF repository has the following structure:
 
 * `catalog/` contains the AD files
-* `analyze.py` automatically analyze ADs (maps, chains, trees, ...)
-* `check.py` check syntax and semantic of the ADs
-* `parse.py` parse ADs from other sources (CAPEC, ...)
+* `analyze.py` automatically analyzes ADs (maps, chains, trees, ...)
+* `check.py` checks syntax and semantics of the ADs
+* `parse.py` parses ADs from other sources (CAPEC, ...)
 * `*_test.py` test scripts
-* `Makefile` run tests, scripts, etc
+* `Makefile` runs tests, scripts, etc
 
-This repository for has been extended by the following content compared to the original [AttackDefense Framework (ADF)](https://github.com/francozappa/adf) (see [Connecting AD Catalog with MITRE EM3ED](#connecting-ad-catalog-with-mitre-em3ed) for detailed description):
+This repository fork has been extended by the following content compared to the original [AttackDefense Framework (ADF)](https://github.com/francozappa/adf) (see [Connecting AD Catalog with MITRE EM3ED](#connecting-ad-catalog-with-mitre-em3ed) for a detailed description):
 
-* `catalog-mitre/` AD file catalog with content from `catalog` deduplicted and optimized for generic use in the area of constrained devices
-* `dict/` contains definition of the newly added AD dictionary: alowed phrases for `surf`, `vect`, `model`, and `tag`
-* `check_tool.py` check syntax and semantic of the ADs, extended by:
+* `catalog-mitre/` AD file catalog with content from `catalog` deduplicated and optimized for generic use in the area of constrained devices
+* `dict/` contains the definition of the newly added AD dictionary: allowed phrases for `surf`, `vect`, `model`, and `tag`
+* `check_tool.py` checks syntax and semantics of the ADs, extended by:
   - the ability to compare two AD files and rank ability between ADs
   - the ability to use ADF dictionaries
-  - the generate the ADF dictionary from the AD file
+  - the ability to generate the ADF dictionary from the AD file
 * `mitre/` MITRE EM3ED-related resources
-* `visualization/` shows the MITRE EM3ED-ADF database relationship in the means of the hierarchicaly structured generated static web page
+* `visualization/` shows the MITRE EM3ED–ADF database relationship by means of the hierarchically structured generated static web page
 
 
 ## ADF Research Paper (ACM TECS)
@@ -143,19 +143,19 @@ hardware, software, firmware, security, privacy, and protocols.
 
 ### Generic AD Catalog for Constrained CMOS Devices
 
-An original [catalog/](catalog) created by the expert groups was reviewed, and slightly modified, and [catalog-mitre/](catalog-mitre) was created in following steps:
+An original [catalog/](catalog) created by the expert groups was reviewed and slightly modified, and [catalog-mitre/](catalog-mitre) was created in the following steps:
   - removed deprecated files and examples
   - created AD database files to closely reflect the MITRE EM3ED structure
-  - merged similar and overlaping AD objects
-  - to improve consistency, we used the **Title Case** style (in dictionaries, and through ADs as a consequence) for v`surf`, `vect`, `model`, and `tag` terms.
+  - merged similar and overlapping AD objects
+  - to improve consistency, we prefer the use of **Title Case** style (in dictionaries and through ADs as a consequence) for `surf`, `vect`, `model`, and `tag` terms.
 
-The resulting AD database files were validated, the non-compliance with respect to YAML and ADF standards was fixed.
+The resulting AD database files were validated, and noncompliance with respect to YAML and ADF standards was fixed.
 
 Additionally, dictionaries in [dicts/](dicts) were created to simplify validation.
-[Dictionaries](dicts) contain allowed phrases, and the description of `surf`, `vect`, `model`, and `tag`. Additionally they allow linkage with MITRE by Threat IDs (TID) connected to top-level attack vectors, and MITRE Device Properties (PID) connected to main attack surfaces.
-The `check_tool.py` enforces, that at least one (the most top-level) AD's attack surface must be linked with MITRE TID.
+[Dictionaries](dicts) contain allowed phrases and the description of `surf`, `vect`, `model`, and `tag`. Additionally, they allow linkage with MITRE by Threat IDs (TID) connected to top-level attack vectors, and MITRE Device Properties (PID) connected to main attack surfaces.
+The `check_tool.py` enforces that at least one (the most top-level) AD's attack surface must be linked with a MITRE TID.
 
-The resulting [catalog-mitre](catalog-mitre) contains deduplicated ADs interlinked with MITRE EM3ED by TIDs connected to top-level attack surface, and PIDs connected to top-level attack vectors allowing maping ADs to MITRE EM3ED threats and device properties.
+The resulting [catalog-mitre](catalog-mitre) contains deduplicated ADs interlinked with MITRE EM3ED by TIDs connected to top-level attack surfaces and PIDs connected to top-level attack vectors, allowing mapping ADs to MITRE EM3ED threats and device properties.
 
 
 ### AD Checker Tool Examples
