@@ -48,7 +48,7 @@
 
 {% if display_vector == true %}
 {% assign display_vector = false %}
-    * {{ vect_obj[0] }}  {% if vect_obj[1].tid %} (<a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a>) {% endif %}
+    * {{ vect_obj[0] }}  {% if vect_obj[1].tid %} (<a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html" target="_blank">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a>) {% endif %}
 {% endif %}
       * <a href="{{ DIR_AD }}/{{ ad[0] }}.html">{{ ad[1].a }}</a>
 
@@ -76,7 +76,7 @@
 
 {% comment %} <!-- BEGIN Display Non-covered MITRE surfaces --> {% endcomment %}
 {% if display_property == true %}
-## EM3ED-only: {{ MITRE_PROPERTY[0].name }} (<a href="https://emb3d.mitre.org/properties-mapper/?id={{ MITRE_PIDS }}">MITRE EM3ED {{ MITRE_PIDS }}</a>)
+## EM3ED-only: {{ MITRE_PROPERTY[0].name }} (<a href="https://emb3d.mitre.org/properties-mapper/?id={{ MITRE_PIDS }}" target="_blank">MITRE EM3ED {{ MITRE_PIDS }}</a>)
 
   * Attack Vectors and Threats:
 {% endif %}
@@ -90,7 +90,7 @@
 
 {% for vuln in mitre_vulnerabilities %}
 
-    * {{ vuln.name }} (<a href="https://emb3d.mitre.org/threats/{{ vuln.x_mitre_emb3d_threat_id }}.html">MITRE EM3ED {{ vuln.x_mitre_emb3d_threat_id }}) </a>
+    * {{ vuln.name }} (<a href="https://emb3d.mitre.org/threats/{{ vuln.x_mitre_emb3d_threat_id }}.html" target="_blank">MITRE EM3ED {{ vuln.x_mitre_emb3d_threat_id }}) </a>
 
 
 {% endfor %}

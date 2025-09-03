@@ -17,7 +17,7 @@ Risk Assesment: {{ page.risk }}
 <h2>CWE</h2>
 {% for cwe in page.cwe %}
 
-<p><a href="https://cwe.mitre.org/data/definitions/{{ cwe }}.html">{{ cwe }}</a></p>
+<p><a href="https://cwe.mitre.org/data/definitions/{{ cwe }}.html" target="_blank">{{ cwe }}</a></p>
 
 {% endfor %}
 
@@ -25,7 +25,7 @@ Risk Assesment: {{ page.risk }}
 
 {% for cve in page.cve %}
 
-<p><a href="https://www.cve.org/CVERecord?id=CVE-{{ page.year }}-{{ cve }}">{{ cve }}</a></p>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-{{ page.year }}-{{ cve }}" target="_blank">{{ cve }}</a></p>
 
 {% endfor %}
 
@@ -37,7 +37,7 @@ Risk Assesment: {{ page.risk }}
 {% for surf_dict in site.data.dicts.physical.surf %}
 
 {% if surf_dict[0] contains ad_surf or surf_dict[1].alias contains ad_surf %}
-<p><a href="../map_physical.html#{{ surf_dict[0] | slugify: "ascii" }}">{{ surf_dict[0] }}</a> {% if surf_dict[1].pid %} (<a href="https://emb3d.mitre.org/properties-mapper/?id=PID-{{ surf_dict[1].pid }}">MITRE EM3ED PID-{{ surf_dict[1].pid }}</a>) {% endif %}</p>
+<p><a href="../map_physical.html#{{ surf_dict[0] | slugify: "ascii" }}">{{ surf_dict[0] }}</a> {% if surf_dict[1].pid %} (<a href="https://emb3d.mitre.org/properties-mapper/?id=PID-{{ surf_dict[1].pid }}" target="_blank">MITRE EM3ED PID-{{ surf_dict[1].pid }}</a>) {% endif %}</p>
 {% endif %}
 
 {% endfor %}
@@ -50,7 +50,7 @@ Risk Assesment: {{ page.risk }}
 
 {% for ad_vect in page.vect %}
 {% if vect_obj[0] contains ad_vect or vect_obj[1].alias contains ad_vect %}
-<p> {{ vect_obj[0] }} {% if vect_obj[1].tid %} (<a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a>) {% endif %} </p>
+<p> {{ vect_obj[0] }} {% if vect_obj[1].tid %} (<a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html" target="_blank">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a>) {% endif %} </p>
 {% endif %}
 {% endfor %}
 

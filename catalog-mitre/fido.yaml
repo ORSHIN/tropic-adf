@@ -24,7 +24,6 @@ time_khandles:  # child of auth_sca
   vect: [Timing Attack]
   model: [Remote]
   tag: [Linking]
-  risk:
   cve: ["31742"]
   cwe: ["208"]
   capec: ["621"]
@@ -40,7 +39,6 @@ emsca_secel:  # child of auth_sca
   vect: [Electromagnetic Side-Channel Attack]
   model: [Physical, Passive]
   tag: [NXP A700X Secure Element]
-  risk:
   cve: ["3011"]
   cwe: ["1300"]
   capec: ["622"]
@@ -56,7 +54,6 @@ ble_titan:
   vect: [CertVerify, Credential Change Abused, Unauthenticated Credential Change]
   model: [Proximity, Relay]
   tag: [BLE, Titan Security Key]
-  risk: []
   cve: []
   cwe: ["702"]
   capec: ["115"]
@@ -75,7 +72,6 @@ taa_ossh:
   vect: [Weak Protocol]
   model: [Remote]
   tag: [OpenSSH]
-  risk:
   cve: ["36368"]
   cwe: ["290"]
   capec: ["115"]
@@ -94,7 +90,6 @@ wan_ac:
   vect: [Insecure Impl]
   model: [Remote]
   tag: [Authentication Bypass, WebAuthN]
-  risk:
   cve: ["38299"]
   cwe: ["284"]
   capec: ["115"]
@@ -113,7 +108,6 @@ wan_sbo:
   vect: [Insecure Impl]
   model: [Remote]
   tag: [Stack Overflow, WebAuthN]
-  risk:
   cve: ["28281"]
   cwe: ["121"]
   capec: ["100"]
@@ -132,7 +126,6 @@ sca_i2c:
   vect: [Insecure Impl, Firmware]
   model: [Physical, Evil Maid, Supply Chain]
   tag: [NitroKey, NitroKey FIDO U2F, I2C, EFM8UB, ATECC508A]
-  risk:
   cve: ["12061"]
   cwe: ["319", "523"]
   capec: ["37"]
@@ -156,7 +149,6 @@ sca_deb:
   vect: [Firmware, ROM Extraction]
   model: [Physical, Evil Maid, Supply Chain]
   tag: [NitroKey, NitroKey Pro 2, Microcontroller, STM32F1, SmartMX P5CD081]
-  risk:
   cve: []
   cwe: ["1314"]
   capec: ["679"]
@@ -176,7 +168,6 @@ sca_sk_microecc:
   vect: [Timing Attack]
   model: [Physical, Passive]
   tag: [SoloKey, ECC]
-  risk:
   cve: ["27208"]
   cwe: ["208"]
   capec: ["189"]
@@ -198,7 +189,6 @@ sca_sk_fi:
   vect: [Fault Injection Attack]
   model: [Evil Maid, Supply Chain]
   tag: [SoloKey, Solo, STM32L4]
-  risk:
   cve: ["27208"]
   cwe: ["1240"]
   capec: ["624"]
@@ -217,7 +207,6 @@ sk_down:
   vect: [Firmware Rollback, Fault Injection Attack]
   model: [Evil Maid, Remote]
   tag: [SoloKey, Solo]
-  risk:
   cve: []
   cwe: ["1328"]
   capec: ["624"]
@@ -239,7 +228,6 @@ sca_sk_emfi:
   vect: [FA, Electromagnetic Fault Injection]
   model: [Evil Maid]
   tag: [SoloKey, USB Stack]
-  risk:
   cve: []
   cwe: ["1319"]
   capec: ["624"]
@@ -259,7 +247,6 @@ auth_cl_mitm:
   vect: [Weak Protocol]
   model: [Proximity, MiTM]
   tag: [MiTM]
-  risk:
   cve: []
   cwe: ["300"]
   capec: ["94"]
@@ -279,8 +266,6 @@ cl_rp_mitm:
   vect: [Weak Protocol]
   model: [Remote, MiTM]
   tag: [MiTM]
-  risk:
   cve: []
   cwe: ["300"]
   capec: ["94", "662"]
-  

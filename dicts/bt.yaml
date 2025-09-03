@@ -46,7 +46,7 @@ surf:
     Authentication:
         alias: ["Authentication"]
         description: "Authentication"
-    Feature exchange:
+    Feature Exchange:
         alias: ["Feature exchange"]
         description: "Feature exchange"
     LMP:

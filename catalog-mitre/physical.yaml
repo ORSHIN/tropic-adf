@@ -281,7 +281,7 @@ spectre_pht:
   # Optional fields
   year: 2018
   cve: ["CVE-2017-5753", "CVE-2017-5715"]
-  risk: [5.6]
+  risk: 5.6
 
 spectre_btb:
   # Primary fields
@@ -297,7 +297,7 @@ spectre_btb:
   # Optional fields
   year: 2018
   cve: ["CVE-2017-5753", "CVE-2017-5715"]
-  risk: [5.6]
+  risk: 5.6
 
 
 spectre_rsb:
@@ -314,7 +314,7 @@ spectre_rsb:
   # Optional fields
   year: 2018
   cve: ["CVE-2017-5753", "CVE-2017-5715"]
-  risk: [5.6]
+  risk: 5.6
 
 
 spectre_stl:
@@ -331,7 +331,7 @@ spectre_stl:
   # Optional fields
   year: 2018
   cve: ["CVE-2017-5753", "CVE-2017-5715"]
-  risk: [5.6]
+  risk: 5.6
 
 rom_dump:
   a: ROM optical dump (Retrieving ROM content from pictures)

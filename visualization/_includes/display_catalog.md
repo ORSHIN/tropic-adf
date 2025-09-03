@@ -32,7 +32,7 @@
 {% if display_property == true %}
 {% assign display_property = false %}
 {% if MITRE_PID %}
-{% comment %} {{ MITRE_PROPERTY[0].name }} (<a href="https://emb3d.mitre.org/properties-mapper/?id={{ MITRE_PIDS }}">MITRE EM3ED {{ MITRE_PIDS }}</a>) {% endcomment %}
+{% comment %} {{ MITRE_PROPERTY[0].name }} (<a href="https://emb3d.mitre.org/properties-mapper/?id={{ MITRE_PIDS }}" target="_blank">MITRE EM3ED {{ MITRE_PIDS }}</a>) {% endcomment %}
 {% else %}
 {% comment %} ADF-Only Surfaces (No MITRE EM3ED PID) {% endcomment %}
 {% endif %}
@@ -51,7 +51,7 @@
 {% if display_vector == true %}
 {% assign display_vector = false %}
 {% if vect_obj[1].tid %}
-<tr><td> {{ vect_obj[0] }}  </td><td> <a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a> </td><td> n/a </td></tr>
+<tr><td> {{ vect_obj[0] }}  </td><td> <a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html" target="_blank">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a> </td><td> n/a </td></tr>
 {% endif %}
 {% endif %}
 
@@ -67,7 +67,7 @@
 {% assign risk_severity_class = "risk_severity_none" %}
 {% endif %}
 
-<tr><td> <a href="{{ DIR_AD }}/{{ ad[0] }}.html">{{ ad[1].a }}</a>  </td><td> {% if vect_obj[1].tid %} <a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a> {% endif %} </td><td class="{{ risk_severity_class }}"> {% if ad[1].risk %} {{ ad[1].risk }} {% else %} n/a {% endif %} </td></tr>
+<tr><td> <a href="{{ DIR_AD }}/{{ ad[0] }}.html">{{ ad[1].a }}</a>  </td><td> {% if vect_obj[1].tid %} <a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html" target="_blank">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a> {% endif %} </td><td class="{{ risk_severity_class }}"> {% if ad[1].risk %} {{ ad[1].risk }} {% else %} n/a {% endif %} </td></tr>
 
 {% comment %} <!-- END Display NON-EMPTY stuff --> {% endcomment %}
 
@@ -93,7 +93,7 @@
 
 {% comment %} <!-- BEGIN Display Non-covered MITRE surfaces --> {% endcomment %}
 {% if display_property == true %}
-{% comment %} EM3ED-only: {{ MITRE_PROPERTY[0].name }} (<a href="https://emb3d.mitre.org/properties-mapper/?id={{ MITRE_PIDS }}">MITRE EM3ED {{ MITRE_PIDS }}</a>) {% endcomment %}
+{% comment %} EM3ED-only: {{ MITRE_PROPERTY[0].name }} (<a href="https://emb3d.mitre.org/properties-mapper/?id={{ MITRE_PIDS }}" target="_blank">MITRE EM3ED {{ MITRE_PIDS }}</a>) {% endcomment %}
 
 {% endif %}
 
@@ -106,7 +106,7 @@
 
 {% for vuln in mitre_vulnerabilities %}
 
-<tr><td> {{ vuln.name }}  </td><td> <a href="https://emb3d.mitre.org/threats/{{ vuln.x_mitre_emb3d_threat_id }}.html">MITRE EM3ED {{ vuln.x_mitre_emb3d_threat_id }} </a> </td><td> n/a </td></tr>
+<tr><td> {{ vuln.name }}  </td><td> <a href="https://emb3d.mitre.org/threats/{{ vuln.x_mitre_emb3d_threat_id }}.html" target="_blank">MITRE EM3ED {{ vuln.x_mitre_emb3d_threat_id }} </a> </td><td> n/a </td></tr>
 
 {% endfor %}
 {% endfor %}
