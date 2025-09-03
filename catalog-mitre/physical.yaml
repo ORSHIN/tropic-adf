@@ -386,9 +386,9 @@ lightweight_cryptographic_engine_instruction_flow:
     - Memory
     - MMU
   vect:
-    - Reverse Engineering
     - Fault Injection
     - Signal Injection
+    - Reverse Engineering
   tag:
     - Micro-probing
 
@@ -509,8 +509,8 @@ fuse_copy_read:
     - Private Key
     - Memory
   vect:
-    - Reverse-Engineering
     - ROM/NVRAM Data Extraction or Modification
+    - Reverse-Engineering
   tag:
     - Implementation Attack
 
@@ -528,8 +528,8 @@ fuse_read:
     - Private Key
     - Memory
   vect:
-    - Reverse-Engineering
     - ROM/NVRAM Data Extraction or Modification
+    - Reverse-Engineering
   tag:
     - Implementation Attack
     - Optical Chip Inspection
@@ -584,7 +584,7 @@ uv_erase:
   surf:
     - Memory
   vect:
-    - UV Illumination
     - ROM/NVRAM Data Extraction or Modification
+    - UV Illumination
   tag:
     - UV Illumination

@@ -49,7 +49,7 @@ blur:
     Prevent role switching: [Track asymmetries in roles between BT and BLE]
   year: 2020
   surf: [BC, BLE, SMP, LMP, Pairing, CTKD]
-  vect: [Cross-transport pairing, SC downgrade, No IO downgrade]
+  vect: [SC downgrade, Cross-transport pairing, No IO downgrade]
   model: [Proximity, Impersonation, MitM, Unintended session]
   tag: [Protocol, LESC, SSP, SC, dual-mode]
   cve: ["15802", "20361"]
@@ -65,10 +65,9 @@ blacktooth:
   surf: [BC, Session]
   vect:
     [
-      Authentication role switch,
-      SC downgrade,
-      Entropy downgrade,
       Key brute force,
+      Entropy downgrade,
+      Authentication role switch,
       RCE,
     ]
   model: [Proximity, Zero-Click, Impersonation, MitM, Unintended session]

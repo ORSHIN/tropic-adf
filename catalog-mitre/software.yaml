@@ -85,7 +85,7 @@ timing_info:
     Reduction of profiling infrastructure: [Reduced performance counter in non-machine mode]
     Constant-time implementation: [Data independent timing]
   surf: [Bootloader]
-  vect: [Profiling, Power Analysis, Electromagnetic Analysis, Code Execution, Hardware Performance Counter]
+  vect: [Timing Attack, Profiling, Power Analysis, Electromagnetic Analysis, Code Execution, Hardware Performance Counter]
   model: [Physical Access, Passive]
   tag: ["SCA"]
 
