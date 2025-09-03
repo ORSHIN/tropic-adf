@@ -10,7 +10,7 @@ sca_power_spa:
   d:
     Constant-time/flow implementation: []
   surf: [Cryptographic Algorithm Implementation]
-  vect: [Side-Channel Attack, Power Side-Channel Attack]
+  vect: [Power Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, SPA]
 
@@ -19,7 +19,7 @@ sca_power_spa_exponentiation:
   d:
     Constant-time/flow implementation: [Square and multiply always, Montgomery ladder]
   surf: [Cryptographic Algorithm Implementation, RSA, RSA Exponentiation, private key]
-  vect: [Side-Channel Attack, Power Side-Channel Attack]
+  vect: [Power Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Power Side-Channel, SPA]
 
@@ -29,7 +29,7 @@ sca_em_spa_exponentiation:
     Constant-time/flow implementation: [Square and multiply always, Montgomery ladder]
     Add security sensors: [EM proximity sensor]
   surf: [Cryptographic Algorithm Implementation, RSA, RSA Exponentiation, private key]
-  vect: [Side-Channel Attack, Electromagnetic Side-Channel Attack]
+  vect: [Electromagnetic Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Electromagnetic Side-Channel, SPA]
 
@@ -38,7 +38,7 @@ sca_power_spa_multiplication:
   d:
     Constant-time/flow implementation: [Double and add always, Montgomery ladder]
   surf: [Cryptographic Algorithm Implementation, ECC, ECC Multiplication, private key]
-  vect: [Side-Channel Attack, Power Side-Channel Attack]
+  vect: [Power Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Power Side-Channel, SPA]
 
@@ -48,7 +48,7 @@ sca_em_spa_multiplication:
     Constant-time/flow implementation: [Double and add always, Montgomery ladder]
     Add security sensors: [EM proximity sensor]
   surf: [Cryptographic Algorithm Implementation, ECC, ECC Multiplication, private key]
-  vect: [Side-Channel Attack, Electromagnetic Side-Channel Attack]
+  vect: [Electromagnetic Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Electromagnetic Side-Channel, SPA]
 
@@ -58,7 +58,7 @@ sca_power_dpa:
     Decouple the power consumption from the key: [Data randomization, Masking, Blinding]
     Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
   surf: [Cryptographic Algorithm Implementation]
-  vect: [Side-Channel Attack, Power Side-Channel Attack]
+  vect: [Power Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Power Side-Channel, DPA, CPA]
 
@@ -68,7 +68,7 @@ sca_em_dpa:
     Decouple the electromagnetic emanations from the key: [Data randomization, Masking, Blinding]
     Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
   surf: [Cryptographic Algorithm Implementation]
-  vect: [Side-Channel Attack, Electromagnetic Side-Channel Attack]
+  vect: [Electromagnetic Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Electromagnetic Side-Channel, DPA, CPA]
 
@@ -78,7 +78,7 @@ sca_power_2ndorder_dpa:
     Decouple the power consumption from the key: [Second order masking]
     Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
   surf: [Cryptographic Algorithm Implementation]
-  vect: [Side-Channel Attack, Power Side-Channel Attack]
+  vect: [Power Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Power Side-Channel, DPA, CPA]
 
@@ -88,7 +88,7 @@ sca_em_2ndorder_dpa:
     Decouple the electromagnetic emanations from the key: [Second order masking]
     Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
   surf: [Cryptographic Algorithm Implementation]
-  vect: [Side-Channel Attack, Electromagnetic Side-Channel Attack]
+  vect: [Electromagnetic Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Electromagnetic Side-Channel, DPA, CPA]
 
@@ -98,7 +98,7 @@ sca_power_higherorder_dpa:
     Decouple the power consumption from the key: [nth-order masking]
     Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
   surf: [Cryptographic Algorithm Implementation]
-  vect: [Side-Channel Attack, Power Side-Channel Attack]
+  vect: [Power Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Power Side-Channel, DPA, CPA]
 
@@ -108,7 +108,7 @@ sca_em_higherorder_dpa:
     Decouple the electromagnetic emanations from the key: [nth-order masking]
     Decrease signal-to-noise ratio: [Instruction shuffling, Dummy instructions, Clock jitter, Increase parallel activity]
   surf: [Cryptographic Algorithm Implementation]
-  vect: [Side-Channel Attack, Electromagnetic Side-Channel Attack]
+  vect: [Electromagnetic Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack, Electromagnetic Side-Channel, DPA, CPA]
 
@@ -117,7 +117,7 @@ sca_alignment:
   d:
     Randomize waveform shape: [Current scrambling]
   surf: [Cryptographic Algorithm Implementation]
-  vect: [Side-Channel Attack, Power Side-Channel Attack]
+  vect: [Power Side-Channel Attack, Side-Channel Attack]
   model: [Physical, Passive]
   tag: [Implementation Attack, Side-Channel Attack]
 
