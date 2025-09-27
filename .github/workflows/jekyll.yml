@@ -48,10 +48,11 @@ jobs:
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         # run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./visualization_build/
-          destination: ./visualization_build/_site
+        run: echo "Skip this due to problem with custom plugins on github pages"
+        # uses: actions/jekyll-build-pages@v1
+        # with:
+        #   source: ./visualization_build/
+        #   destination: ./visualization_build/_site
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
