@@ -4,14 +4,14 @@
 layout: default
 ---
 
-# ADF to MITRE EM3ED Mapping
+# ADF to MITRE EMB3D Mapping
 
 The following pages show how all AD objects defined in the [generic catalog](https://github.com/ORSHIN/tropic-adf/tree/main/catalog-mitre) map to MITRE Device Properties (PID) and Threat IDs (TID):
 
-  * [Physical MITRE EM3ED and ADF Mapping](map_physical.html)
-  * [Software MITRE EM3ED and ADF Mapping](map_software.html)
-  * [Bluetooth MITRE EM3ED and ADF Mapping](map_bt.html)
-  * [FIDO Device MITRE EM3ED and ADF Mapping](map_fido.html)
+  * [Physical MITRE EMB3D and ADF Mapping](map_physical.html)
+  * [Software MITRE EMB3D and ADF Mapping](map_software.html)
+  * [Bluetooth MITRE EMB3D and ADF Mapping](map_bt.html)
+  * [FIDO Device MITRE EMB3D and ADF Mapping](map_fido.html)
 
 
 # Example Device Threat Model

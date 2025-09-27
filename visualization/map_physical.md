@@ -5,7 +5,7 @@
 layout: default
 ---
 
-# Physical MITRE EM3ED and ADF Mapping
+# Physical MITRE EMB3D and ADF Mapping
 
 
 {% comment %} <!-- BEGIN Iterate Defined Surfaces --> {% endcomment %}

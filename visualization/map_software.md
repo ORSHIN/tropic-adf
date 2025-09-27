@@ -5,7 +5,7 @@
 layout: default
 ---
 
-# Software MITRE EM3ED and ADF Mapping
+# Software MITRE EMB3D and ADF Mapping
 
 
 {% comment %} <!-- BEGIN Iterate Defined Surfaces --> {% endcomment %}

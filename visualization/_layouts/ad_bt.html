@@ -36,7 +36,7 @@ Risk Assesment: {{ page.risk }}
 {% for surf_dict in site.data.dicts.bt.surf %}
 
 {% if surf_dict[0] contains ad_surf or surf_dict[1].alias contains ad_surf %}
-<p><a href="../map_bt.html#{{ surf_dict[0] | slugify: "ascii" }}">{{ surf_dict[0] }}</a> {% if surf_dict[1].pid %} (<a href="https://emb3d.mitre.org/properties-mapper/?id=PID-{{ surf_dict[1].pid }}" target="_blank">MITRE EM3ED PID-{{ surf_dict[1].pid }}</a>) {% endif %}</p>
+<p><a href="../map_bt.html#{{ surf_dict[0] | slugify: "ascii" }}">{{ surf_dict[0] }}</a> {% if surf_dict[1].pid %} (<a href="https://emb3d.mitre.org/properties-mapper/?id=PID-{{ surf_dict[1].pid }}" target="_blank">MITRE EMB3D PID-{{ surf_dict[1].pid }}</a>) {% endif %}</p>
 {% endif %}
 
 {% endfor %}
@@ -49,7 +49,7 @@ Risk Assesment: {{ page.risk }}
 
 {% for ad_vect in page.vect %}
 {% if vect_obj[0] contains ad_vect or vect_obj[1].alias contains ad_vect %}
-<p> {{ vect_obj[0] }} {% if vect_obj[1].tid %} (<a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html" target="_blank">MITRE EM3ED TID-{{ vect_obj[1].tid }}</a>) {% endif %} </p>
+<p> {{ vect_obj[0] }} {% if vect_obj[1].tid %} (<a href="https://emb3d.mitre.org/threats/TID-{{ vect_obj[1].tid }}.html" target="_blank">MITRE EMB3D TID-{{ vect_obj[1].tid }}</a>) {% endif %} </p>
 {% endif %}
 {% endfor %}
 

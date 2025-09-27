@@ -5,7 +5,7 @@
 layout: default
 ---
 
-# FIDO Device MITRE EM3ED and ADF Mapping
+# FIDO Device MITRE EMB3D and ADF Mapping
 
 
 {% comment %} <!-- BEGIN Iterate Defined Surfaces --> {% endcomment %}

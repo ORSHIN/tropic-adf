@@ -5,7 +5,7 @@
 layout: default
 ---
 
-# Bluetooth MITRE EM3ED and ADF Mapping
+# Bluetooth MITRE EMB3D and ADF Mapping
 
 
 {% comment %} <!-- BEGIN Iterate Defined Surfaces --> {% endcomment %}

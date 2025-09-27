@@ -4,11 +4,11 @@
 
 This repository is a fork of the original [AttackDefense Framework (ADF)](https://github.com/francozappa/adf) — a threat-modeling framework for IoT devices and lifecycles.
 
-The aim of this fork is to establish a relationship with the newly introduced [MITRE EMB3D™ Threat Model](https://emb3d.mitre.org/), which has some advantages over ADF, including faster modeling over a fixed structure of attack surfaces (EM3ED Device Properties).
+The aim of this fork is to establish a relationship with the newly introduced [MITRE EMB3D™ Threat Model](https://emb3d.mitre.org/), which has some advantages over ADF, including faster modeling over a fixed structure of attack surfaces (EMB3D Device Properties).
 
 On the other hand, the flexibility and easy-to-adopt approach of ADF make it possible to extend and enrich the MITRE EMB3D™ Threat Model by intermapping threats with a custom ADF database, allowing rapid and more precise threat modeling at the same time.
 
-Additionally, we provide a comprehensive database of ADF files based on the list of AD objects created in the ORSHIN project as a starting point for detailed modeling of constrained CMOS devices, where the MITRE EM3ED is not very detailed.
+Additionally, we provide a comprehensive database of ADF files based on the list of AD objects created in the ORSHIN project as a starting point for detailed modeling of constrained CMOS devices, where the MITRE EMB3D is not very detailed.
 
 The ADF repository has the following structure:
 
@@ -19,7 +19,7 @@ The ADF repository has the following structure:
 * `*_test.py` test scripts
 * `Makefile` runs tests, scripts, etc
 
-This repository fork has been extended by the following content compared to the original [AttackDefense Framework (ADF)](https://github.com/francozappa/adf) (see [Connecting AD Catalog with MITRE EM3ED](#connecting-ad-catalog-with-mitre-em3ed) for a detailed description):
+This repository fork has been extended by the following content compared to the original [AttackDefense Framework (ADF)](https://github.com/francozappa/adf) (see [Connecting AD Catalog with MITRE EMB3D](#connecting-ad-catalog-with-mitre-em3ed) for a detailed description):
 
 * `catalog-mitre/` AD file catalog with content from `catalog` deduplicated and optimized for generic use in the area of constrained devices
 * `dict/` contains the definition of the newly added AD dictionary: allowed phrases for `surf`, `vect`, `model`, and `tag`
@@ -27,8 +27,8 @@ This repository fork has been extended by the following content compared to the 
   - the ability to compare two AD files and rank ability between ADs
   - the ability to use ADF dictionaries
   - the ability to generate the ADF dictionary from the AD file
-* `mitre/` MITRE EM3ED-related resources
-* `visualization/` shows the MITRE EM3ED–ADF database relationship by means of the hierarchically structured generated static web page
+* `mitre/` MITRE EMB3D-related resources
+* `visualization/` shows the MITRE EMB3D–ADF database relationship by means of the hierarchically structured generated static web page
 
 
 ## ADF Research Paper (ACM TECS)
@@ -139,13 +139,13 @@ hardware, software, firmware, security, privacy, and protocols.
    [fido_system.yaml](catalog/fido_system.yaml).
 
 
-## Connecting AD Catalog with MITRE EM3ED
+## Connecting AD Catalog with MITRE EMB3D
 
 ### Generic AD Catalog for Constrained CMOS Devices
 
 An original [catalog/](catalog) created by the expert groups was reviewed and slightly modified, and [catalog-mitre/](catalog-mitre) was created in the following steps:
   - removed deprecated files and examples
-  - created AD database files to closely reflect the MITRE EM3ED structure
+  - created AD database files to closely reflect the MITRE EMB3D structure
   - merged similar and overlapping AD objects
   - to improve consistency, we prefer the use of **Title Case** style (in dictionaries and through ADs as a consequence) for `surf`, `vect`, `model`, and `tag` terms.
 
@@ -155,7 +155,7 @@ Additionally, dictionaries in [dicts/](dicts) were created to simplify validatio
 [Dictionaries](dicts) contain allowed phrases and the description of `surf`, `vect`, `model`, and `tag`. Additionally, they allow linkage with MITRE by Threat IDs (TID) connected to top-level attack vectors, and MITRE Device Properties (PID) connected to main attack surfaces.
 The `check_tool.py` enforces that at least one (the most top-level) AD's attack surface must be linked with a MITRE TID.
 
-The resulting [catalog-mitre](catalog-mitre) contains deduplicated ADs interlinked with MITRE EM3ED by TIDs connected to top-level attack surfaces and PIDs connected to top-level attack vectors, allowing mapping ADs to MITRE EM3ED threats and device properties.
+The resulting [catalog-mitre](catalog-mitre) contains deduplicated ADs interlinked with MITRE EMB3D by TIDs connected to top-level attack surfaces and PIDs connected to top-level attack vectors, allowing mapping ADs to MITRE EMB3D threats and device properties.
 
 
 ### AD Checker Tool Examples
@@ -212,9 +212,9 @@ sudo apt install ruby ruby-dev gem
 sudo gem install jekyll
 ```
 
-To generate a threat model, based on the MITRE EM3ED surfaces (PIDs), for a particular device:
+To generate a threat model, based on the MITRE EMB3D surfaces (PIDs), for a particular device:
 - go to the `visualization/_data`
-- modify all `model_*.yaml` files to reflect your device needs by removing or adding attack surfaces (PIDs) -  take [model_em3ed.yaml](visualization/_data/model_em3ed.yaml) as a reference
+- modify all `model_*.yaml` files to reflect your device needs by removing or adding attack surfaces (PIDs) -  take [model_emb3d.yaml](visualization/_data/model_emb3d.yaml) as a reference
 
 Then execute:
 

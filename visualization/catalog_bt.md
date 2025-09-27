@@ -10,7 +10,7 @@ custom_js:
 # Bluetooth Threat Catalog
 
 <table id="threatCatalog" data-sortable>
-<thead><tr><th>Attack Vector and Threat</th><th>Primary MITRE EM3ED TID</th><th>Risk Value</th></tr></thead>
+<thead><tr><th>Attack Vector and Threat</th><th>Primary MITRE EMB3D TID</th><th>Risk Value</th></tr></thead>
 
 {% comment %} <!-- BEGIN Iterate Defined Surfaces --> {% endcomment %}
 {% for surface in site.data.model_bt %}
